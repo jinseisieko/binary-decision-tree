@@ -6,11 +6,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.jinseisieko</groupId>
-  <artifactId>cbdtree</artifactId>
+  <artifactId>bdtree</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>Complete Binary Decision Tree</name>
+  <name>Binary Decision Tree</name>
   <description>A reusable Java library</description>
   <url>https://github.com/jinseisieko/complete-binary-decision-tree</url>
 
