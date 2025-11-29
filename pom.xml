@@ -5,7 +5,6 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- Use io.github.<username> since you own jinseisieko.github.io -->
   <groupId>io.github.jinseisieko</groupId>
   <artifactId>cbdtree</artifactId>
   <version>1.0.0</version>
@@ -16,8 +15,7 @@
   <url>https://github.com/jinseisieko/complete-binary-decision-tree</url>
 
   <properties>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.release>21</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>5.10.2</junit.version>
   </properties>
@@ -44,8 +42,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.12.1</version>
         <configuration>
-          <source>21</source>
-          <target>21</target>
+          <release>21</release>
         </configuration>
       </plugin>
     </plugins>
