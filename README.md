@@ -40,6 +40,49 @@ builder.insertOutcome(3);
 int depth = machine.getDepth();
 int result = machine.decide(9);
 
+// ===================================== //
+
+BDTree<int, int> casino = new ArrayBDTree<>();
+BDTreeBuilder<> builder = validator.builder();
+builder.insertOutcome(a -> {
+	Random random = new Random();
+	if (Math.random() > 0.5) {
+		a*=2;
+	} else {
+		a=0;
+	}
+	return a;
+})
+
+// ===================================== //
+
+BDTree<int, int> casino = new ArrayBDTree<>();
+BDTreeBuilder<> builder = validator.builder();
+builder.insertCondition(a -> {
+	Random random = new Random();
+	if (Math.random() > 0.5) {
+		a*=2;
+		return true;
+	}
+	return false;
+})
+builder.goToTrueBranch();
+builder.insertOutcome(a -> {
+	Random random = new Random();
+	if (Math.random() > 0.5) {
+		a*=2;
+	} else {
+		a=0;
+	}
+	return a;
+})
+builder.goBack();
+builder.goToFalseBranch();
+builder.insertOutcome(0);
+
+
+
+
 ```
 
 # Notes
