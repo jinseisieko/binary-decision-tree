@@ -41,3 +41,7 @@ int depth = machine.getDepth();
 int result = machine.decide(9);
 
 ```
+
+Notes
+---
+- rename library to BinDecisTree (bindecistree)
