@@ -80,9 +80,37 @@ builder.goBack();
 builder.goToFalseBranch();
 builder.insertOutcome(0);
 
+// ===================================== //
 
+interface User {
+	public int getAge();
+	public int getBalance();
+}
 
+enum AdvertisementType {
+	GENERAL,
+	RICH,
+	CHILD
+}
 
+BDTree<User, AdvertisementTypeA> tree = new DynamicBDTree<>();
+BDTreeBuilder<> builder = tree.builder();
+builder.insertCondition(user -> {
+	return user.getAge() > 18;
+});
+builder.goToTrueBranch();
+builder.insertCondition(user -> {
+	return user.getBalance() > 10000;
+});
+builder.goToTrueBranch();
+builder.insertOutcome(AdvertisementType.RICH);
+builder.goBack();
+builder.goToFalseBranch();
+builder.insertOutcome(AdvertisementType.GENERAL);
+builder.goBack();
+builder.goBack();
+builder.goToFalseBranch();
+builder.insertOutcome(AdvertisementType.CHILD);
 ```
 
 # Notes
