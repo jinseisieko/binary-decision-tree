@@ -46,6 +46,10 @@ int result = machine.decide(9);
 
 Prototype of nodes 
 ```java
+abstract class Node<D, V> {
+    public abstract V execute(D data);
+}
+
 class CNode<D, V> extends Node<D, V> {
     private Predicate<D> condition;
     private Node<D, V> trueBranch;
