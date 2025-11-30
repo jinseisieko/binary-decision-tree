@@ -8,17 +8,17 @@ The base class for nodes (vertices) of binary tree. It has the level (integer) (
 ```java
 BDTree<int, int> machine = DynamicBDTree<>();
 BDTreeBuilder<int, int> builder = machine.builder();
-builder.setCondition(a -> a > 10);
+builder.insertCondition(a -> a > 10);
 builder.goToTrueBranch();
-builder.setOutcome(1);
+builder.insertOutcome(1);
 builder.goBack();
 builder.goToFalseBranch();
-builder.setCondition(a -> a < 5);
+builder.insertCondition(a -> a < 5);
 builder.goToTrueBranch();
-builder.setOutcome(2);
+builder.insertOutcome(2);
 builder.goBack();
 builder.goToFalseBranch();
-builder.setOutcome(3);
+builder.insertOutcome(3);
 int depth = machine.getDepth();
 int result = machine.decide(9);
 
@@ -26,17 +26,17 @@ int result = machine.decide(9);
 
 BDTree<int, int> machine = ArrayBDTree<>(2);
 BDTreeBuilder<int, int> builder = machine.builder();
-builder.setCondition(a -> a > 10);
+builder.insertCondition(a -> a > 10);
 builder.goToTrueBranch();
-builder.setOutcome(1);
+builder.insertOutcome(1);
 builder.goBack();
 builder.goToFalseBranch();
-builder.setCondition(a -> a < 5);
+builder.insertCondition(a -> a < 5);
 builder.goToTrueBranch();
-builder.setOutcome(2);
+builder.insertOutcome(2);
 builder.goBack();
 builder.goToFalseBranch();
-builder.setOutcome(3);
+builder.insertOutcome(3);
 int depth = machine.getDepth();
 int result = machine.decide(9);
 
