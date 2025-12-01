@@ -12,7 +12,7 @@
 
   <name>Binary Decision Tree</name>
   <description>A reusable Java library</description>
-  <url>https://github.com/jinseisieko/complete-binary-decision-tree</url>
+  <url>https://github.com/jinseisieko/binary-decision-tree</url>
 
   <properties>
     <maven.compiler.release>21</maven.compiler.release>
@@ -53,7 +53,7 @@
     <repository>
       <id>github</id>
       <name>GitHub jinseisieko Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/jinseisieko/complete-binary-decision-tree</url>
+      <url>https://maven.pkg.github.com/jinseisieko/binary-decision-tree</url>
     </repository>
   </distributionManagement>
 </project>
