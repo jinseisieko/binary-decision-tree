@@ -171,7 +171,7 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="45.1460538743961" width="337.8291200000002" x="1063.1852800000001" y="293.3156839999996"/>
+          <y:Geometry height="45.1460538743961" width="337.8291200000002" x="1063.1852800000001" y="284.7426570628015"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.706016540527344" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="244.30519104003906" x="46.76196447998058" xml:space="preserve" y="3.0">BinDecisTreeBuilder&lt;D,V&gt; :: interface<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -186,7 +186,7 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="45.1460538743961" width="337.8291200000002" x="1063.1852800000001" y="321.31568399999964"/>
+          <y:Geometry height="45.1460538743961" width="337.8291200000002" x="1063.1852800000001" y="312.7426570628016"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="166.9145600000001" y="3.0">
@@ -208,7 +208,7 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="235.87690530628012" width="337.8291200000002" x="1063.1852800000001" y="349.31568399999964"/>
+          <y:Geometry height="235.87690530628012" width="337.8291200000002" x="1063.1852800000001" y="340.7426570628016"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="216.47219848632812" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="302.61029052734375" x="17.609414736328233" xml:space="preserve" y="3.0">+ insertCondition(condition : Predicate&lt;D&gt;) : void
@@ -345,7 +345,7 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="28.0" width="304.45312000000007" x="196.8870399999998" y="-53.741568000000086"/>
+          <y:Geometry height="28.0" width="304.45312000000007" x="187.15903999999975" y="-189.42924800000017"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.706016540527344" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="246.89219665527344" x="28.780461672363316" xml:space="preserve" y="3.0">BinDecisTreeBranch&lt;D,V&gt; :: interface <y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -360,7 +360,7 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="47.45600000000002" width="304.45312000000007" x="196.8870399999998" y="-25.74156800000003"/>
+          <y:Geometry height="47.45600000000002" width="304.45312000000007" x="187.15903999999975" y="-161.42924800000011"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="150.22656000000003" y="3.0">
@@ -382,11 +382,13 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="51.91936000000001" width="304.45312000000007" x="196.8870399999998" y="21.714431999999988"/>
+          <y:Geometry height="72.66815999999997" width="304.45312000000007" x="187.15903999999975" y="-113.9732480000001"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="39.41203308105469" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="286.0612487792969" x="9.195935610351597" xml:space="preserve" y="3.0">+ getTrueBranch() : BinDecisTreeBranch&lt;D,V&gt;
-+ getFalseBranch() : BinDecisTreeBranch&lt;D,V&gt;<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="-0.5" nodeRatioX="2.220446049250313E-16" nodeRatioY="-0.4821342815980242" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="57.11804962158203" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="286.0612487792969" x="9.195935610351597" xml:space="preserve" y="3.0">+ getTrueBranch() : BinDecisTreeBranch&lt;D,V&gt;
++ getFalseBranch() : BinDecisTreeBranch&lt;D,V&gt;
++ getDepth() : int
+<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="-0.5" nodeRatioX="0.0" nodeRatioY="-0.4801733326565831" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve"/>
             <y:MethodLabel xml:space="preserve"/>
@@ -722,7 +724,7 @@
     <edge id="e5" source="n15" target="n11">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="172.07810869387316" sy="-2.7646080323162323" tx="0.9934282188626185" ty="141.21170884064014">
+          <y:Path sx="172.07810869387316" sy="-2.7646080323162323" tx="1.1376902929664539" ty="149.7847357778382">
             <y:Point x="566.0397086938731" y="608.4658454937799"/>
           </y:Path>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
@@ -748,8 +750,8 @@
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
             <y:Point x="131.94059028368383" y="288.5531839999997"/>
-            <y:Point x="131.94059028368383" y="114.8445654688555"/>
-            <y:Point x="131.94059028368383" y="-39.741568000000086"/>
+            <y:Point x="131.94059028368383" y="-34.4946335058593"/>
+            <y:Point x="131.94059028368383" y="-175.42924800000017"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
@@ -760,9 +762,7 @@
     <edge id="e8" source="n21" target="n19">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-243.57815926158278" ty="117.13043199999981">
-            <y:Point x="131.94059028368383" y="115.1168639999998"/>
-          </y:Path>
+          <y:Path sx="0.0" sy="0.0" tx="-207.24931550781366" ty="252.8181119999999"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
