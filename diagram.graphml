@@ -211,7 +211,7 @@
           <y:Geometry height="235.87690530628012" width="356.8291200000002" x="1063.1852800000001" y="340.7426570628016"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="198.76618194580078" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="349.124267578125" x="3.852426210937608" xml:space="preserve" y="3.0">+ insertCondition(condition : Predicate&lt;D&gt;) : void
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="216.47219848632812" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="349.124267578125" x="3.852426210937608" xml:space="preserve" y="3.0">+ insertCondition(condition : Predicate&lt;D&gt;) : void
 + insertOutcome(handler : Function&lt;D,V&gt;) : void
 + insertOutcome(value : V) : void
 + goToTrueBranch() : void
@@ -221,7 +221,8 @@
 + clear() : void
 + clearBranch() : void
 + insertBranch(branch : BinDecisTreeBranch&lt;D,V&gt;) : void
-+ toBranch() : BinDecisTreeBranch&lt;D,V&gt;<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="-0.5" nodeRatioX="2.220446049250313E-16" nodeRatioY="-0.4821342815980242" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
++ toBranch() : BinDecisTreeBranch&lt;D,V&gt;
++ getDepth() : int<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="-0.5" nodeRatioX="2.220446049250313E-16" nodeRatioY="-0.4821342815980242" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve"/>
             <y:MethodLabel xml:space="preserve"/>
