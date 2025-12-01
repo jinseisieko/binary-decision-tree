@@ -1,4 +1,4 @@
-package io.github.jinseisieko.bdtree;
+package io.github.jinseisieko.bindecistree;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
