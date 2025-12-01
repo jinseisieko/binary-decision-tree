@@ -211,14 +211,13 @@
           <y:Geometry height="235.87690530628012" width="356.8291200000002" x="1063.1852800000001" y="340.7426570628016"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="216.47219848632812" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="349.124267578125" x="3.852426210937608" xml:space="preserve" y="3.0">+ insertCondition(condition : Predicate&lt;D&gt;) : void
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="198.76618194580078" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="349.124267578125" x="3.852426210937608" xml:space="preserve" y="3.0">+ insertCondition(condition : Predicate&lt;D&gt;) : void
 + insertOutcome(handler : Function&lt;D,V&gt;) : void
 + insertOutcome(value : V) : void
 + goToTrueBranch() : void
 + goToFalseBranch() : void
 + goToNeighborBranch() : void
 + goBack() : void
-+ remove() : void
 + clear() : void
 + clearBranch() : void
 + insertBranch(branch : BinDecisTreeBranch&lt;D,V&gt;) : void
@@ -753,7 +752,7 @@
             <y:Point x="131.94059028368383" y="-34.4946335058593"/>
             <y:Point x="131.94059028368383" y="-175.42924800000017"/>
           </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
@@ -763,7 +762,7 @@
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-207.24931550781366" ty="252.8181119999999"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
