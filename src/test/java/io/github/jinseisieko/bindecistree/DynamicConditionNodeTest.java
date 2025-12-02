@@ -9,17 +9,31 @@ import static io.github.jinseisieko.bindecistree.HelperMethods.alwaysTrue;
 class DynamicConditionNodeTest {
 
     @Test
-    void dynamicConditionNode_cannotBeCompleteImmediatelyAfterCreation() {
-        DynamicBinDecisTreeNode<Integer, String> node = new DynamicConditionNode<>(alwaysTrue());
+    void isComplete_shouldBeFalseImmediatelyAfterCreation() {
+        DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicConditionNode<>(alwaysTrue());
         assertFalse(node.isComplete());
     }
 
     @Test
-    void dynamicConditionNodeWithAllNodes_shouldBeComplete() {
-        DynamicBinDecisTreeNode<Integer, String> node = new DynamicConditionNode<>(alwaysTrue());
-        DynamicBinDecisTreeNode<Integer, String> trueNode = new DynamicConditionNode<>(alwaysTrue());
-        DynamicBinDecisTreeNode<Integer, String> falseNode = new DynamicConditionNode<>(alwaysTrue());
+    void isComplete_shouldBeTrueWhenAllSet() {
+        DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicConditionNode<>(alwaysTrue());
+        DynamicBinDecisTreeNode<Integer, Integer> trueNode = new DynamicConditionNode<>(alwaysTrue());
+        DynamicBinDecisTreeNode<Integer, Integer> falseNode = new DynamicConditionNode<>(alwaysTrue());
         node.setAllNodes(trueNode, falseNode);
         assertTrue(node.isComplete());
     }    
+
+    @Test
+    void isComplete_shouldBeFalseIfTrueNodeIsNull() {
+        DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicConditionNode<>(alwaysTrue());
+        node.setFalseNode(new DynamicConditionNode<>(alwaysTrue()));
+        assertFalse(node.isComplete());
+    }
+
+    @Test
+    void isComplete_shouldBeFalseIfFalseNodeIsNull() {
+        DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicConditionNode<>(alwaysTrue());
+        node.setTrueNode(new DynamicConditionNode<>(alwaysTrue()));
+        assertFalse(node.isComplete());
+    }
 }

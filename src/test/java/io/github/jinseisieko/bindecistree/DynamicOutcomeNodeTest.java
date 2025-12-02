@@ -9,7 +9,7 @@ import static io.github.jinseisieko.bindecistree.HelperMethods.assertThrowsWithN
 class DynamicOutcomeNodeTest {
 
     @Test
-    void dynamicOutcomeNode_shouldBeCompleteImmediatelyAfterCreation() {
+    void isComplete_shouldBeTrueImmediatelyAfterCreation() {
         DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicOutcomeNode<>(alwaysZero());
         Assertions.assertTrue(node.isComplete());
     }
@@ -17,21 +17,21 @@ class DynamicOutcomeNodeTest {
     // --- Tests for DynamicOutcomeNode unsupported operations ---
 
     @Test
-    void dynamicOutcomeNode_setTrueNode_shouldThrowUnsupportedOperationException() {
+    void setTrueNode_shouldThrowUnsupportedOperationException() {
         DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicOutcomeNode<>(alwaysZero());
         DynamicBinDecisTreeNode<Integer, Integer> otherNode = new DynamicOutcomeNode<>(alwaysZero());
         assertThrowsWithNonEmptyMessage(UnsupportedOperationException.class, () -> node.setTrueNode(otherNode));
     }
 
     @Test
-    void dynamicOutcomeNode_setFalseNode_shouldThrowUnsupportedOperationException() {
+    void setFalseNode_shouldThrowUnsupportedOperationException() {
         DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicOutcomeNode<>(alwaysZero());
         DynamicBinDecisTreeNode<Integer, Integer> otherNode = new DynamicOutcomeNode<>(alwaysZero());
         assertThrowsWithNonEmptyMessage(UnsupportedOperationException.class, () -> node.setFalseNode(otherNode));
     }
 
     @Test
-    void dynamicOutcomeNode_setAllNodes_shouldThrowUnsupportedOperationException() {
+    void setAllNodes_shouldThrowUnsupportedOperationException() {
         DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicOutcomeNode<>(alwaysZero());
         DynamicBinDecisTreeNode<Integer, Integer> trueNode = new DynamicOutcomeNode<>(alwaysZero());
         DynamicBinDecisTreeNode<Integer, Integer> falseNode = new DynamicOutcomeNode<>(alwaysZero());
