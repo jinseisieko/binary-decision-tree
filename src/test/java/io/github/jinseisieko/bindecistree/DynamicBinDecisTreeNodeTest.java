@@ -1,66 +1,89 @@
 package io.github.jinseisieko.bindecistree;
 
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 class DynamicBinDecisTreeNodeTest {
-    @Test
-    void NodeSettersWithNull_shouldThrowExceptions() {
-        Exception ex;
-        DynamicBinDecisTreeNode<Integer, String> dynamicConditionNode = new DynamicConditionNode<>();
-        DynamicBinDecisTreeNode<Integer, String> secondNode = new DynamicConditionNode<>();
-        ex = Assertions.assertThrows(NullPointerException.class, () -> {
-            dynamicConditionNode.setTrueNode(null);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
-        ex = Assertions.assertThrows(NullPointerException.class, () -> {
-            dynamicConditionNode.setFalseNode(null);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
-        ex = Assertions.assertThrows(NullPointerException.class, () -> {
-            dynamicConditionNode.setAllNodes(secondNode, null);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
-        ex = Assertions.assertThrows(NullPointerException.class, () -> {
-            dynamicConditionNode.setAllNodes(null, secondNode);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
-        ex = Assertions.assertThrows(NullPointerException.class, () -> {
-            dynamicConditionNode.setAllNodes(null, null);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
+    
+        // --- Tests for DynamicConditionNode ---
 
-        DynamicBinDecisTreeNode<Integer, String> dynamicOutcomeNode = new DynamicOutcomeNode<>();
-        ex = Assertions.assertThrows(NullPointerException.class, () -> {
-            dynamicOutcomeNode.setTrueNode(null);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
-        ex = Assertions.assertThrows(NullPointerException.class, () -> {
-            dynamicOutcomeNode.setFalseNode(null);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
-        ex = Assertions.assertThrows(NullPointerException.class, () -> {
-            dynamicOutcomeNode.setAllNodes(secondNode, null);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
-        ex = Assertions.assertThrows(NullPointerException.class, () -> {
-            dynamicOutcomeNode.setAllNodes(null, secondNode);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
-        ex = Assertions.assertThrows(NullPointerException.class, () -> {
-            dynamicOutcomeNode.setAllNodes(null, null);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
+    @Test
+    void dynamicConditionNode_setTrueNode_null_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicConditionNode<>();
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setTrueNode(null));
+    }
+
+    @Test
+    void dynamicConditionNode_setFalseNode_null_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicConditionNode<>();
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setFalseNode(null));
+    }
+
+    @Test
+    void dynamicConditionNode_setAllNodes_nullTrueNode_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicConditionNode<>();
+        DynamicBinDecisTreeNode<Integer, String> falseNode = new DynamicConditionNode<>();
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setAllNodes(null, falseNode));
+    }
+
+    @Test
+    void dynamicConditionNode_setAllNodes_nullFalseNode_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicConditionNode<>();
+        DynamicBinDecisTreeNode<Integer, String> trueNode = new DynamicConditionNode<>();
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setAllNodes(trueNode, null));
+    }
+
+    @Test
+    void dynamicConditionNode_setAllNodes_bothNull_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicConditionNode<>();
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setAllNodes(null, null));
+    }
+
+    // --- Tests for DynamicOutcomeNode ---
+
+    @Test
+    void dynamicOutcomeNode_setTrueNode_null_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicOutcomeNode<>();
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setTrueNode(null));
+    }
+
+    @Test
+    void dynamicOutcomeNode_setFalseNode_null_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicOutcomeNode<>();
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setFalseNode(null));
+    }
+
+    @Test
+    void dynamicOutcomeNode_setAllNodes_nullTrueNode_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicOutcomeNode<>();
+        DynamicBinDecisTreeNode<Integer, String> falseNode = new DynamicConditionNode<>();
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setAllNodes(null, falseNode));
+    }
+
+    @Test
+    void dynamicOutcomeNode_setAllNodes_nullFalseNode_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicOutcomeNode<>();
+        DynamicBinDecisTreeNode<Integer, String> trueNode = new DynamicConditionNode<>();
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setAllNodes(trueNode, null));
+    }
+
+    @Test
+    void dynamicOutcomeNode_setAllNodes_bothNull_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicOutcomeNode<>();
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setAllNodes(null, null));
+    }
+
+
+    private void assertThrowsWithNonEmptyMessage(Class<? extends Throwable> expectedType, Executable executable) {
+        Throwable exception = assertThrows(expectedType, executable);
+        assertNotNull(exception);
+        assertFalse(
+            exception.getMessage() == null || exception.getMessage().isEmpty(),
+            "Exception message should not be null or empty"
+        );
     }
 }
