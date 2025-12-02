@@ -1,11 +1,12 @@
 package io.github.jinseisieko.bindecistree;
 
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-import static io.github.jinseisieko.bindecistree.HelperMethods.alwaysTrue;
-import static io.github.jinseisieko.bindecistree.HelperMethods.alwaysZero;
-import static io.github.jinseisieko.bindecistree.HelperMethods.assertThrowsWithNonEmptyMessage;
+import static io.github.jinseisieko.bindecistree.TestUtilities.alwaysTrue;
+import static io.github.jinseisieko.bindecistree.TestUtilities.alwaysZero;
+import static io.github.jinseisieko.bindecistree.TestUtilities.assertThrowsWithNonEmptyMessage;
 
 
 
@@ -78,4 +79,29 @@ class DynamicBinDecisTreeNodeTest {
         DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicOutcomeNode<>(alwaysZero());
         assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setAllNodes(null, null));
     }
+
+    // --- Use cases tests  ---
+
+    @Test
+    void shouldClassifyAge_correctly() {
+        DynamicOutcomeNode<Integer, String> senior = new DynamicOutcomeNode<>("senior");
+        DynamicOutcomeNode<Integer, String> adult = new DynamicOutcomeNode<>("adult");
+        DynamicOutcomeNode<Integer, String> minor = new DynamicOutcomeNode<>("minor");
+
+        DynamicConditionNode<Integer, String> adultOrMinor = new DynamicConditionNode<>(age -> age >= 18);
+        adultOrMinor.setTrueNode(adult);
+        adultOrMinor.setFalseNode(minor);
+
+        DynamicConditionNode<Integer, String> root = new DynamicConditionNode<>(age -> age >= 65);
+        root.setTrueNode(senior);
+        root.setFalseNode(adultOrMinor);
+
+        assertEquals("senior", root.execute(70));
+        assertEquals("adult", root.execute(30));
+        assertEquals("minor", root.execute(10));
+        assertEquals("adult", root.execute(18));
+        assertEquals("senior", root.execute(65)); 
+    }
+
+
 }

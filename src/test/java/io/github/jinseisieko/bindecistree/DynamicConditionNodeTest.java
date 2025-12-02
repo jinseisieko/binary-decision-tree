@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
-import static io.github.jinseisieko.bindecistree.HelperMethods.alwaysTrue;
+import static io.github.jinseisieko.bindecistree.TestUtilities.alwaysTrue;
 
 class DynamicConditionNodeTest {
 

@@ -3,8 +3,8 @@ package io.github.jinseisieko.bindecistree;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static io.github.jinseisieko.bindecistree.HelperMethods.alwaysZero;
-import static io.github.jinseisieko.bindecistree.HelperMethods.assertThrowsWithNonEmptyMessage;
+import static io.github.jinseisieko.bindecistree.TestUtilities.alwaysZero;
+import static io.github.jinseisieko.bindecistree.TestUtilities.assertThrowsWithNonEmptyMessage;
 
 class DynamicOutcomeNodeTest {
 

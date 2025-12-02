@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.function.Executable;
 
-class HelperMethods {
+class TestUtilities {
     public static void assertThrowsWithNonEmptyMessage(Class<? extends Throwable> expectedType, Executable executable) {
         Throwable exception = assertThrows(expectedType, executable);
         assertNotNull(exception);
