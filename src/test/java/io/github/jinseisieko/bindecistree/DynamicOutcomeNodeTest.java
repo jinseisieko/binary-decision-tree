@@ -3,6 +3,8 @@ package io.github.jinseisieko.bindecistree;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static io.github.jinseisieko.bindecistree.HelperMethods.assertThrowsWithNonEmptyMessage;
+
 class DynamicOutcomeNodeTest {
 
     @Test
@@ -11,26 +13,27 @@ class DynamicOutcomeNodeTest {
         Assertions.assertTrue(node.isComplete());
     }
 
+    // --- Tests for DynamicOutcomeNode unsupported operations ---
+
     @Test
-    void dynamicOutcomeNode_cannotApplySetters() {
-        Exception ex;
-        DynamicBinDecisTreeNode<Integer, String> dynamicOutcomeNode = new DynamicOutcomeNode<>();
-        DynamicBinDecisTreeNode<Integer, String> secondNode = new DynamicOutcomeNode<>();
-        DynamicBinDecisTreeNode<Integer, String> thirdNode = new DynamicOutcomeNode<>();
-        ex = Assertions.assertThrows(UnsupportedOperationException.class, () -> {
-            dynamicOutcomeNode.setTrueNode(secondNode);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
-        ex = Assertions.assertThrows(UnsupportedOperationException.class, () -> {
-            dynamicOutcomeNode.setFalseNode(secondNode);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
-        ex = Assertions.assertThrows(UnsupportedOperationException.class, () -> {
-            dynamicOutcomeNode.setAllNodes(secondNode, thirdNode);
-        });
-        Assertions.assertNotNull(ex);
-        Assertions.assertFalse(ex.getMessage().isEmpty());
+    void dynamicOutcomeNode_setTrueNode_shouldThrowUnsupportedOperationException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicOutcomeNode<>();
+        DynamicBinDecisTreeNode<Integer, String> otherNode = new DynamicOutcomeNode<>();
+        assertThrowsWithNonEmptyMessage(UnsupportedOperationException.class, () -> node.setTrueNode(otherNode));
+    }
+
+    @Test
+    void dynamicOutcomeNode_setFalseNode_shouldThrowUnsupportedOperationException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicOutcomeNode<>();
+        DynamicBinDecisTreeNode<Integer, String> otherNode = new DynamicOutcomeNode<>();
+        assertThrowsWithNonEmptyMessage(UnsupportedOperationException.class, () -> node.setFalseNode(otherNode));
+    }
+
+    @Test
+    void dynamicOutcomeNode_setAllNodes_shouldThrowUnsupportedOperationException() {
+        DynamicBinDecisTreeNode<Integer, String> node = new DynamicOutcomeNode<>();
+        DynamicBinDecisTreeNode<Integer, String> trueNode = new DynamicOutcomeNode<>();
+        DynamicBinDecisTreeNode<Integer, String> falseNode = new DynamicOutcomeNode<>();
+        assertThrowsWithNonEmptyMessage(UnsupportedOperationException.class, () -> node.setAllNodes(trueNode, falseNode));
     }
 }

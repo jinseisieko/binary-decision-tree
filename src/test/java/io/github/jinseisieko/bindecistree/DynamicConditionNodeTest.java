@@ -1,6 +1,7 @@
 package io.github.jinseisieko.bindecistree;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 class DynamicConditionNodeTest {
@@ -8,7 +9,7 @@ class DynamicConditionNodeTest {
     @Test
     void dynamicConditionNode_cannotBeCompleteImmediatelyAfterCreation() {
         DynamicBinDecisTreeNode<Integer, String> node = new DynamicConditionNode<>();
-        Assertions.assertFalse(node.isComplete());
+        assertFalse(node.isComplete());
     }
 
     @Test
@@ -17,6 +18,6 @@ class DynamicConditionNodeTest {
         DynamicBinDecisTreeNode<Integer, String> trueNode = new DynamicConditionNode<>();
         DynamicBinDecisTreeNode<Integer, String> falseNode = new DynamicConditionNode<>();
         node.setAllNodes(trueNode, falseNode);
-        Assertions.assertTrue(node.isComplete());
+        assertTrue(node.isComplete());
     }    
 }
