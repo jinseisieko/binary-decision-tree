@@ -57,52 +57,52 @@ public class DynamicBinDecisTree<D,V> implements BinDecisTree<D, V> {
         }
 
         @Override
-        public void inserCondition(Predicate<D> condition) {
+        public BinDecisTreeBuilder<D,V> inserCondition(Predicate<D> condition) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public void insertOutcome(Function<D, V> handler) {
+        public BinDecisTreeBuilder<D,V> insertOutcome(Function<D, V> handler) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public void insertOutcome(V value) {
+        public BinDecisTreeBuilder<D,V> insertOutcome(V value) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public void goToTrueBranch() {
+        public BinDecisTreeBuilder<D,V> goToTrueBranch() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public void goToFalseBranch() {
+        public BinDecisTreeBuilder<D,V> goToFalseBranch() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public void goToNeighborBranch() {
+        public BinDecisTreeBuilder<D,V> goToNeighborBranch() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public void goBack() {
+        public BinDecisTreeBuilder<D,V> goBack() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public void clear() {
+        public BinDecisTreeBuilder<D,V> clear() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public void clearBranch() {
+        public BinDecisTreeBuilder<D,V> clearBranch() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public void insertBranch(BinDecisTreeBranch<D, V> branch) {
+        public BinDecisTreeBuilder<D,V> insertBranch(BinDecisTreeBranch<D, V> branch) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 

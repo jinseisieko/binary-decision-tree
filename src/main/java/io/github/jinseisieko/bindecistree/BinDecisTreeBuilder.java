@@ -6,25 +6,25 @@ import java.util.function.Predicate;
 
 public interface BinDecisTreeBuilder<D,V> {
 
-    public void inserCondition(Predicate<D> condition);
+    public BinDecisTreeBuilder<D,V> inserCondition(Predicate<D> condition);
 
-    public void insertOutcome(Function<D,V> handler);
+    public BinDecisTreeBuilder<D,V> insertOutcome(Function<D,V> handler);
 
-    public void insertOutcome(V value);
+    public BinDecisTreeBuilder<D,V> insertOutcome(V value);
 
-    public void goToTrueBranch();
+    public BinDecisTreeBuilder<D,V> goToTrueBranch();
 
-    public void goToFalseBranch();
+    public BinDecisTreeBuilder<D,V> goToFalseBranch();
 
-    public void goToNeighborBranch();
+    public BinDecisTreeBuilder<D,V> goToNeighborBranch();
 
-    public void goBack();
+    public BinDecisTreeBuilder<D,V> goBack();
 
-    public void clear();
+    public BinDecisTreeBuilder<D,V> clear();
 
-    public void clearBranch();
+    public BinDecisTreeBuilder<D,V> clearBranch();
 
-    public void insertBranch(BinDecisTreeBranch<D,V> branch);
+    public BinDecisTreeBuilder<D,V> insertBranch(BinDecisTreeBranch<D,V> branch);
 
     public BinDecisTreeBranch<D,V> toBranch();
 

@@ -5,6 +5,14 @@ import java.util.function.Function;
 class DynamicOutcomeNode<D, V> extends DynamicBinDecisTreeNode<D, V> {
     private Function<D, V> handler;
     
+    public DynamicOutcomeNode(Function<D, V> handler) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public DynamicOutcomeNode(V value) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     public void setHandler(Function<D, V> handler) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
