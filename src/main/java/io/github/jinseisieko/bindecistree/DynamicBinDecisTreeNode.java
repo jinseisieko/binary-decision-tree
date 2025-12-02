@@ -4,9 +4,7 @@ abstract class DynamicBinDecisTreeNode<D, V> {
     private DynamicBinDecisTreeNode<D, V> trueNode;
     private DynamicBinDecisTreeNode<D, V> falseNode;
 
-    public boolean isFull() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    abstract public boolean isComplete();
 
     abstract public V execute(D data);
 
