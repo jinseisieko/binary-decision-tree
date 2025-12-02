@@ -23,4 +23,29 @@ class TestUtilities {
     public static <T> Function<T,Integer> alwaysZero() {
         return t -> 0;
     }
+    
+    static class Counter {
+        private int value;
+
+        public Counter(int value) {
+            this.value = value;
+        }
+
+        public Counter() {
+            this(0);
+        }
+ 
+        public void increment() {
+            value++;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return "Counter{" + value + "}";
+        }
+    }
 }

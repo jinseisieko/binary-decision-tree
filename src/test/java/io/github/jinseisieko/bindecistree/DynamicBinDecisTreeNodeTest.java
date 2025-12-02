@@ -4,6 +4,7 @@ package io.github.jinseisieko.bindecistree;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import io.github.jinseisieko.bindecistree.TestUtilities.Counter;
 import static io.github.jinseisieko.bindecistree.TestUtilities.alwaysTrue;
 import static io.github.jinseisieko.bindecistree.TestUtilities.alwaysZero;
 import static io.github.jinseisieko.bindecistree.TestUtilities.assertThrowsWithNonEmptyMessage;
@@ -103,5 +104,24 @@ class DynamicBinDecisTreeNodeTest {
         assertEquals("senior", root.execute(65)); 
     }
 
+    @Test
+    void conditionWithSideEffects_producesDifferentResultsOnSameTree() {
+        DynamicOutcomeNode<Counter, String> evenOutcome = new DynamicOutcomeNode<>("even");
+        DynamicOutcomeNode<Counter, String> oddOutcome = new DynamicOutcomeNode<>("odd");
 
+        DynamicConditionNode<Counter, String> root = new DynamicConditionNode<>((Counter counter) -> {
+            counter.increment();
+            return counter.getValue() % 2 == 0;
+        });
+
+        root.setFalseNode(root.copy());
+        root.getFalseNode().setFalseNode(oddOutcome.copy());
+        root.getFalseNode().setTrueNode(evenOutcome.copy());
+
+        root.setTrueNode(evenOutcome);
+        
+        assertEquals("even", root.execute(new Counter(1)));
+        assertEquals("even", root.execute(new Counter(0)));
+        assertEquals("odd", root.getTrueNode().execute(new Counter(0)));
+    }
 }
