@@ -32,4 +32,6 @@ abstract class DynamicBinDecisTreeNode<D, V> {
         setTrueNode(trueNode);
         setFalseNode(falseNode);
     }
+
+    abstract public DynamicBinDecisTreeNode<D, V> copy();
 }

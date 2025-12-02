@@ -22,4 +22,9 @@ class DynamicConditionNode<D,V> extends DynamicBinDecisTreeNode<D, V> {
     public boolean isComplete() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    @Override
+    public DynamicBinDecisTreeNode<D, V> copy() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
