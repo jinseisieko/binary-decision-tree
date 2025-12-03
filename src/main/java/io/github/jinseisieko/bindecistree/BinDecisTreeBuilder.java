@@ -29,4 +29,6 @@ public interface BinDecisTreeBuilder<D,V> {
     public BinDecisTreeBranch<D,V> toBranch();
 
     public int getDepth();
+
+    public BinDecisTree<D,V> build();
 }

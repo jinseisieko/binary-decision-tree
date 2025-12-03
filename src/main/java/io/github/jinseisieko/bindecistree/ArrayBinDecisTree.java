@@ -125,5 +125,10 @@ public class ArrayBinDecisTree<D,V> implements BinDecisTree<D, V>{
         public int getDepth() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
+
+        @Override
+        public BinDecisTree<D, V> build() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
     }
 }
