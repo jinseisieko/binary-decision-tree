@@ -1,10 +1,50 @@
-# Classes
-## CBDTreeNode
-The base class for nodes (vertices) of binary tree. It has the level (integer) (e.g. level = 0 means that it is root of tree). 
+## Description
+This library works with binary decision trees. Specifically, You can create, modify, and use them for various tasks. The core interfaces are `BinDecisTree`, `BinDecisTreeBranch`, and `BinDecisTreeBuilder`. Each handles a specific role: using trees, passing tree parts, and changing structure.
+
+### `BinDecisTree<D,V>`
+It defines the main tree behavior.  
+- `D` is input data type.  
+- `V` is output value type.  
+
+Use this interface to declare your trees. It gives you:
+
+- `decide(D): V` – runs the tree and returns a result.  
+- `isComplete(): boolean` – checks if every node has a condition or outcome.  
+- `getDepth(): int` – returns tree depth. A single node has depth 0.  
+- `toBranch(): BinDecisTreeBranch<D,V>` – turns the whole tree into a branch.  
+- `getAllBranches(): List<BinDecisTreeBranch<D,V>>` – returns all root-to-leaf paths.  
+- `getAllBranchesWithDepth(depth: int): List<BinDecisTreeBranch<D,V>>` – returns branches at a specific depth.
+
+Two classes implement `BinDecisTree`:  
+- `DynamicBinDecisTree` – uses linked nodes.  
+- `ArrayBinDecisTree` – stores nodes in an array with index-based child access.  
+
+Both offer the same interface but differ internally. Choose based on your performance and memory needs.
+
+### `BinDecisTreeBranch<D,V>`
+It lets you move parts of a tree between structures. Branches are read-only. They hold references to the original tree for efficiency. Each tree type has its own branch implementation. You can insert a branch into another tree using a builder.
+
+### `BinDecisTreeBuilder<D,V>`
+It handles all modifications. It starts at the root and tracks your current position. Builders never change the original tree. They return a new instance with your changes applied. This keeps your state safe and supports easy rollbacks.
+
+Builder operations:
+
+- `insertCondition(condition: Predicate<D>)` – adds a condition at your current position.  
+- `insertOutcome(handler: Function<D,V>)` or `insertOutcome(value: V)` – adds a result value or function that returns value.  
+- `goToTrueNode()` – moves to the true child.  
+- `goToFalseNode()` – moves to the false child.  
+- `goToSiblingNode()` – moves to the sibling node.  
+- `goBack()` – moves back to the parent.  
+- `clear()` – removes the node at your current position.  
+- `clearSubtree()` – removes the whole subtree below your position.  
+- `insertBranch(branch: BinDecisTreeBranch<D,V>)` – inserts a branch at your position.  
+- `toBranch()` – converts your current subtree into a branch.  
+- `getLevel()` – returns your current level in the tree.  
+- `build()` – finishes and returns your new tree.
 
 ## UML diagram
 ![UML diagram](assets/uml_diagram.png)
-# Prototype of usage 
+## Prototype of usage 
 ```java
 BDTree<int, int> machine = DynamicBDTree<>();
 BDTreeBuilder<int, int> builder = machine.builder();
