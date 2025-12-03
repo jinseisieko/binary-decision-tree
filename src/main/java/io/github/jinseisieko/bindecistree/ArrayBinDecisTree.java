@@ -6,8 +6,8 @@ import java.util.function.Predicate;
 
 public class ArrayBinDecisTree<D,V> implements BinDecisTree<D, V>{
     private final int DEPTH;
-    private Predicate<D>[] nodes;
-    private Function<D, V>[] outcomes;
+    private Predicate<D>[] conditions;
+    private Function<D,V>[] outcomes;
 
     public ArrayBinDecisTree(int depth) {
         throw new UnsupportedOperationException("Not supported yet.");
