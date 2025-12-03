@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 import static io.github.jinseisieko.bindecistree.TestUtilities.alwaysTrue;
+import static io.github.jinseisieko.bindecistree.TestUtilities.assertThrowsWithNonEmptyMessage;
 
 class DynamicConditionNodeTest {
 
@@ -35,5 +36,11 @@ class DynamicConditionNodeTest {
         DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicConditionNode<>(alwaysTrue());
         node.setTrueNode(new DynamicConditionNode<>(alwaysTrue()));
         assertFalse(node.isComplete());
+    }
+
+    @Test
+    void setCondition_null_shouldThrowNullPointerException() {
+        DynamicConditionNode<Integer, Integer> node = new DynamicConditionNode<>(alwaysTrue());
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setCondition(null));
     }
 }
