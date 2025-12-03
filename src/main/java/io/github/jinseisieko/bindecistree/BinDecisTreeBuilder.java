@@ -12,11 +12,11 @@ public interface BinDecisTreeBuilder<D,V> {
 
     public BinDecisTreeBuilder<D,V> insertOutcome(V value);
 
-    public BinDecisTreeBuilder<D,V> goToTrueBranch();
+    public BinDecisTreeBuilder<D,V> goToTrueNode();
 
-    public BinDecisTreeBuilder<D,V> goToFalseBranch();
+    public BinDecisTreeBuilder<D,V> goToFalseNode();
 
-    public BinDecisTreeBuilder<D,V> goToSiblingBranch();
+    public BinDecisTreeBuilder<D,V> goToSiblingNode();
 
     public BinDecisTreeBuilder<D,V> goBack();
 

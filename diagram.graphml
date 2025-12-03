@@ -214,12 +214,12 @@
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="234.17821502685547" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="482.5823669433594" x="5.949473687740749" xml:space="preserve" y="3.0">+ insertCondition(condition : Predicate&lt;D&gt;) : BinDecisTreeBuilder&lt;D,V&gt;
 + insertOutcome(handler : Function&lt;D,V&gt;) : BinDecisTreeBuilder&lt;D,V&gt;
 + insertOutcome(value : V) : BinDecisTreeBuilder&lt;D,V&gt;
-+ goToTrueBranch() : BinDecisTreeBuilder&lt;D,V&gt;
-+ goToFalseBranch() : BinDecisTreeBuilder&lt;D,V&gt;
-+ goToSiblingBranch() : BinDecisTreeBuilder&lt;D,V&gt;
++ goToTrueNode() : BinDecisTreeBuilder&lt;D,V&gt;
++ goToFalseNode() : BinDecisTreeBuilder&lt;D,V&gt;
++ goToSiblingNode() : BinDecisTreeBuilder&lt;D,V&gt;
 + goBack() : BinDecisTreeBuilder&lt;D,V&gt;
 + clear() : BinDecisTreeBuilder&lt;D,V&gt;
-+ clearBranch() : BinDecisTreeBuilder&lt;D,V&gt;
++ clearSubtree : BinDecisTreeBuilder&lt;D,V&gt;
 + insertBranch(branch : BinDecisTreeBranch&lt;D,V&gt;) : BinDecisTreeBuilder&lt;D,V&gt;
 + toBranch() : BinDecisTreeBranch&lt;D,V&gt;
 + getLevel() : int
