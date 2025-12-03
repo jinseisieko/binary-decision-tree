@@ -16,7 +16,7 @@ public interface BinDecisTreeBuilder<D,V> {
 
     public BinDecisTreeBuilder<D,V> goToFalseBranch();
 
-    public BinDecisTreeBuilder<D,V> goToNeighborBranch();
+    public BinDecisTreeBuilder<D,V> goToSiblingBranch();
 
     public BinDecisTreeBuilder<D,V> goBack();
 

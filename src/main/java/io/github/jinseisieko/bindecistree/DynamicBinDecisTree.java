@@ -82,7 +82,7 @@ public class DynamicBinDecisTree<D,V> implements BinDecisTree<D, V> {
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> goToNeighborBranch() {
+        public BinDecisTreeBuilder<D,V> goToSiblingBranch() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 

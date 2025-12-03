@@ -216,7 +216,7 @@
 + insertOutcome(value : V) : BinDecisTreeBuilder&lt;D,V&gt;
 + goToTrueBranch() : BinDecisTreeBuilder&lt;D,V&gt;
 + goToFalseBranch() : BinDecisTreeBuilder&lt;D,V&gt;
-+ goToNeighborBranch() : BinDecisTreeBuilder&lt;D,V&gt;
++ goToSiblingBranch() : BinDecisTreeBuilder&lt;D,V&gt;
 + goBack() : BinDecisTreeBuilder&lt;D,V&gt;
 + clear() : BinDecisTreeBuilder&lt;D,V&gt;
 + clearBranch() : BinDecisTreeBuilder&lt;D,V&gt;
