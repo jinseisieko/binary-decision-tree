@@ -47,6 +47,12 @@ class DynamicBinDecisTreeNodeTest {
         assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setAllNodes(null, null));
     }
 
+    @Test
+    void dynamicConditionNode_execute_null_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicConditionNode<>(alwaysTrue());
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.execute(null));
+    }
+
     // --- Tests for DynamicOutcomeNode ---
 
     @Test
@@ -79,6 +85,12 @@ class DynamicBinDecisTreeNodeTest {
     void dynamicOutcomeNode_setAllNodes_bothNull_shouldThrowNullPointerException() {
         DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicOutcomeNode<>(alwaysZero());
         assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setAllNodes(null, null));
+    }
+
+    @Test
+    void dynamicOutcomeNode_execute_null_shouldThrowNullPointerException() {
+        DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicOutcomeNode<>(alwaysZero());
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.execute(null));
     }
 
     // --- Use cases tests  ---
