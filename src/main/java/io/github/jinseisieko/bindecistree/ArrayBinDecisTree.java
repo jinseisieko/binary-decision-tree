@@ -23,7 +23,7 @@ public class ArrayBinDecisTree<D,V> implements BinDecisTree<D, V>{
     }
 
     @Override
-    public boolean isFull() {
+    public boolean isComplete() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

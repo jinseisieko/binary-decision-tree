@@ -59,7 +59,7 @@
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="127.9421157836914" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="447.7294921875" x="5.549813906250108" xml:space="preserve" y="3.0">+ decide(data : D) : V
-+ isFull() : boolean
++ isComplete() : boolean
 + getDepth() : int
 + builder() : BinDecisTreeBuilder&lt;D,V&gt;
 + toBranch() : BinDecisTreeBranch&lt;D,V&gt;

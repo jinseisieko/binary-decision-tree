@@ -6,7 +6,7 @@ public interface BinDecisTree<D,V> {
 
     public V decide(D data);
 
-    public boolean isFull();
+    public boolean isComplete();
 
     public int getDepth();
 
