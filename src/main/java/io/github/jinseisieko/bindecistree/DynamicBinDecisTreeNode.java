@@ -8,10 +8,6 @@ abstract class DynamicBinDecisTreeNode<D, V> {
 
     abstract public V execute(D data);
 
-    public DynamicBinDecisTreeBranch<D,V> toBranch() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
     public void setTrueNode(DynamicBinDecisTreeNode<D, V> trueNode) {
         this.trueNode = trueNode;
     }
