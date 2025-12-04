@@ -11,7 +11,7 @@
   <packaging>jar</packaging>
 
   <name>Binary Decision Tree</name>
-  <description>A reusable Java library</description>
+  <description>A Java library for working with binary decision trees</description>
   <url>https://github.com/jinseisieko/binary-decision-tree</url>
 
   <properties>
