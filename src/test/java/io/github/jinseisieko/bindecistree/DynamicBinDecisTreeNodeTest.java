@@ -18,7 +18,7 @@ class DynamicBinDecisTreeNodeTest {
     @Test
     void dynamicConditionNode_setTrueNode_null_shouldThrowNullPointerException() {
         DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicConditionNode<>(alwaysTrue());
-        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setTrueNode(null));
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.setFalseNode(null));
     }
 
     @Test
@@ -93,6 +93,23 @@ class DynamicBinDecisTreeNodeTest {
         assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> node.execute(null));
     }
 
+    // --- execute ---
+    @Test
+    void uncompleteNode_execute_shouldCauseIllegalStateException() {
+        DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicConditionNode<>(alwaysTrue());
+        assertThrowsWithNonEmptyMessage(IllegalStateException.class, () -> node.execute(0));
+    }
+
+    @Test
+    void uncompleteStructure_execute_shouldCauseIllegalStateException() {
+        DynamicBinDecisTreeNode<Integer, Integer> node = new DynamicConditionNode<>(alwaysTrue());
+        DynamicBinDecisTreeNode<Integer, Integer> trueNode = new DynamicConditionNode<>(alwaysTrue());
+        DynamicBinDecisTreeNode<Integer, Integer> falseNode = new DynamicConditionNode<>(alwaysTrue());
+        node.setTrueNode(trueNode);
+        node.setFalseNode(falseNode);
+        assertThrowsWithNonEmptyMessage(IllegalStateException.class, () -> node.execute(0));
+    }
+
     // --- Use cases tests  ---
 
     @Test
@@ -130,10 +147,10 @@ class DynamicBinDecisTreeNodeTest {
         root.getFalseNode().setFalseNode(oddOutcome.copy());
         root.getFalseNode().setTrueNode(evenOutcome.copy());
 
-        root.setTrueNode(evenOutcome);
+        root.setTrueNode(evenOutcome.copy());
         
         assertEquals("even", root.execute(new Counter(1)));
         assertEquals("even", root.execute(new Counter(0)));
-        assertEquals("odd", root.getTrueNode().execute(new Counter(0)));
+        assertEquals("odd", root.getFalseNode().execute(new Counter(0)));
     }
 }

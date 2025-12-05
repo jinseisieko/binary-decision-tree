@@ -1,4 +1,5 @@
 package io.github.jinseisieko.bindecistree;
+import java.util.Objects;
 
 abstract class DynamicBinDecisTreeNode<D, V> {
     private DynamicBinDecisTreeNode<D, V> trueNode;
@@ -9,11 +10,11 @@ abstract class DynamicBinDecisTreeNode<D, V> {
     abstract public V execute(D data);
 
     public void setTrueNode(DynamicBinDecisTreeNode<D, V> trueNode) {
-        this.trueNode = trueNode;
+        this.trueNode = Objects.requireNonNull(trueNode, "Node cannot be null");
     }
 
     public void setFalseNode(DynamicBinDecisTreeNode<D, V> falseNode) {
-        this.falseNode = falseNode;
+        this.falseNode = Objects.requireNonNull(falseNode, "Node cannot be null");;
     }
 
     public DynamicBinDecisTreeNode<D, V> getTrueNode() {

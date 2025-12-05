@@ -1,38 +1,63 @@
 package io.github.jinseisieko.bindecistree;
 
+import java.util.Objects;
 import java.util.function.Function;
 
-class DynamicOutcomeNode<D, V> extends DynamicBinDecisTreeNode<D, V> {
+final class DynamicOutcomeNode<D, V> extends DynamicBinDecisTreeNode<D, V> {
     private Function<D, V> handler;
     
     public DynamicOutcomeNode(Function<D, V> handler) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.setHandler(handler);
     }
 
     public DynamicOutcomeNode(V value) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.setHandler(value);
+    }
+
+    private DynamicOutcomeNode(DynamicOutcomeNode<D,V> node) {
+        this.handler = node.handler;
     }
 
     public void setHandler(Function<D, V> handler) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.handler = Objects.requireNonNull(handler, "Handler cannot be null");
     }
 
     public void setHandler(V value) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.handler = (data) -> Objects.requireNonNull(value, "Value cannot be null");;
     }
 
     @Override
     public V execute(D data) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Objects.requireNonNull(data, "Data cannot be null");
+        return handler.apply(data);
     }
 
     @Override
     public boolean isComplete() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return true;
     }
 
     @Override
     public DynamicBinDecisTreeNode<D, V> copy() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new DynamicOutcomeNode<>(this);
+    }
+
+    @Override
+    public void setTrueNode(DynamicBinDecisTreeNode<D,V> trueNode) {
+        Objects.requireNonNull(trueNode, "Node cannot be null");
+        throw new UnsupportedOperationException("Outcome nodes cannot have children");
+    }
+
+    @Override
+    public void setFalseNode(DynamicBinDecisTreeNode<D,V> falseNode) {
+        Objects.requireNonNull(falseNode, "Node cannot be null");
+        throw new UnsupportedOperationException("Outcome nodes cannot have children");
+    }
+
+    @Override
+    public void setAllNodes(DynamicBinDecisTreeNode<D,V> trueNode, DynamicBinDecisTreeNode<D,V> falseNode) {
+        Objects.requireNonNull(trueNode, "Node cannot be null");
+        Objects.requireNonNull(falseNode, "Node cannot be null");
+        throw new UnsupportedOperationException("Outcome nodes cannot have children");
     }
 }
