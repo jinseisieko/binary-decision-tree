@@ -67,7 +67,7 @@ public class ArrayBinDecisTree<D,V> implements BinDecisTree<D, V>{
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> inserCondition(Predicate<D> condition) {
+        public BinDecisTreeBuilder<D,V> insertCondition(Predicate<D> condition) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
