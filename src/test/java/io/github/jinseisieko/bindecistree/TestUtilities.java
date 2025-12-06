@@ -48,4 +48,50 @@ class TestUtilities {
             return "Counter{" + value + "}";
         }
     }
+
+    public static <D, V> BinDecisTreeBuilder<D, V> buildCompleteSubtree(
+            BinDecisTreeBuilder<D, V> builder,
+            Predicate<D> condition,
+            V leafValue,
+            int remainingDepth) {
+        if (remainingDepth == 1) {
+            builder.insertCondition(condition)
+                .goToTrueNode()
+                .insertOutcome(leafValue)
+                .goToSiblingNode()
+                .insertOutcome(leafValue)
+                .goBack();
+        } else {
+            builder.insertCondition(condition);
+            builder.goToTrueNode();
+            buildCompleteSubtree(builder, condition, leafValue, remainingDepth - 1);
+            builder.goToSiblingNode();
+            buildCompleteSubtree(builder, condition, leafValue, remainingDepth - 1);
+            builder.goBack();
+        }
+        return builder;
+    }
+
+    public static <D, V> BinDecisTreeBuilder<D, V> buildCompleteSubtree(
+            BinDecisTreeBuilder<D, V> builder,
+            Predicate<D> condition,
+            Function<D, V> leafFunction,
+            int remainingDepth) {
+        if (remainingDepth == 1) {
+            builder.insertCondition(condition)
+                .goToTrueNode()
+                .insertOutcome(leafFunction)
+                .goToSiblingNode()
+                .insertOutcome(leafFunction)
+                .goBack();
+        } else {
+            builder.insertCondition(condition);
+            builder.goToTrueNode();
+            buildCompleteSubtree(builder, condition, leafFunction, remainingDepth - 1);
+            builder.goToSiblingNode();
+            buildCompleteSubtree(builder, condition, leafFunction, remainingDepth - 1);
+            builder.goBack();
+        }
+        return builder;
+    }
 }
