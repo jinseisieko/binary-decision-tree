@@ -13,4 +13,10 @@ class DynamicBinDecisTreeTest {
             .build();
         assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> tree.decide(null));
     }
+
+    @Test
+    void decideUnbuildedTree_shouldThrowIllegalStateException() {
+        BinDecisTree<Integer, Integer> tree = new DynamicBinDecisTree<>();
+        assertThrowsWithNonEmptyMessage(IllegalStateException.class, () -> tree.decide(0));
+    }
 }
