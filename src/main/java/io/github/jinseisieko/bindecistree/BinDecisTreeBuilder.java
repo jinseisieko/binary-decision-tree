@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public interface BinDecisTreeBuilder<D,V> {
 
-    public BinDecisTreeBuilder<D,V> inserCondition(Predicate<D> condition);
+    public BinDecisTreeBuilder<D,V> insertCondition(Predicate<D> condition);
 
     public BinDecisTreeBuilder<D,V> insertOutcome(Function<D,V> handler);
 
