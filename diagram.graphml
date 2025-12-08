@@ -208,22 +208,23 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="235.87690530628012" width="494.4813143188409" x="1142.0762394055268" y="216.04431999999966"/>
+          <y:Geometry height="247.58485064789502" width="494.4813143188409" x="1142.0762394055268" y="216.0443199999997"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="234.17821502685547" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="482.5823669433594" x="5.949473687740749" xml:space="preserve" y="3.0">+ insertCondition(condition : Predicate&lt;D&gt;) : BinDecisTreeBuilder&lt;D,V&gt;
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="251.8842315673828" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="482.5823669433594" x="5.949473687740749" xml:space="preserve" y="3.0">+ insertCondition(condition : Predicate&lt;D&gt;) : BinDecisTreeBuilder&lt;D,V&gt;
 + insertOutcome(handler : Function&lt;D,V&gt;) : BinDecisTreeBuilder&lt;D,V&gt;
 + insertOutcome(value : V) : BinDecisTreeBuilder&lt;D,V&gt;
 + goToTrueNode() : BinDecisTreeBuilder&lt;D,V&gt;
 + goToFalseNode() : BinDecisTreeBuilder&lt;D,V&gt;
 + goToSiblingNode() : BinDecisTreeBuilder&lt;D,V&gt;
++ goToRoot() : BinDecisTreeBuilder&lt;D,V&gt;
 + goBack() : BinDecisTreeBuilder&lt;D,V&gt;
 + clear() : BinDecisTreeBuilder&lt;D,V&gt;
 + clearSubtree : BinDecisTreeBuilder&lt;D,V&gt;
 + insertBranch(branch : BinDecisTreeBranch&lt;D,V&gt;) : BinDecisTreeBuilder&lt;D,V&gt;
 + toBranch() : BinDecisTreeBranch&lt;D,V&gt;
 + getLevel() : int
-+ build() : BinDecisTree&lt;D,V&gt;<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="-0.5" nodeRatioX="2.220446049250313E-16" nodeRatioY="-0.4821342815980242" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
++ build() : BinDecisTree&lt;D,V&gt;<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.49444307951349753" nodeRatioX="-1.1102230246251565E-16" nodeRatioY="0.5" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve"/>
             <y:MethodLabel xml:space="preserve"/>
@@ -729,7 +730,7 @@ the same condition or handler (without children)<y:LabelModel><y:SmartNodeLabelM
     <edge id="e5" source="n15" target="n11">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="184.0928242189397" sy="-2.7646080323162323" tx="-77.89054446074556" ty="237.58121949656288">
+          <y:Path sx="184.0928242189397" sy="-2.7646080323162323" tx="-79.06122614773972" ty="231.7272468257554">
             <y:Point x="564.2944242189396" y="571.5639921497026"/>
             <y:Point x="582.8572814345374" y="571.5639921497026"/>
           </y:Path>
@@ -742,7 +743,7 @@ the same condition or handler (without children)<y:LabelModel><y:SmartNodeLabelM
     <edge id="e6" source="n12" target="n11">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-78.32609715942021" ty="29.627382102731474">
+          <y:Path sx="0.0" sy="0.0" tx="-78.32609715942021" ty="31.09796172485898">
             <y:Point x="1310.990799405527" y="633.1079735260967"/>
           </y:Path>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
@@ -862,7 +863,6 @@ the same condition or handler (without children)<y:LabelModel><y:SmartNodeLabelM
       </data>
     </edge>
     <edge id="e16" source="n37" target="n29">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
