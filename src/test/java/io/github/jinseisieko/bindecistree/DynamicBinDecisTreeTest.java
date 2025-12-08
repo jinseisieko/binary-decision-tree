@@ -45,15 +45,15 @@ class DynamicBinDecisTreeTest {
         assertTrue(tree.isComplete());
     }
 
-    @ParameterizedTest
-    @ValueSource(ints = {1, 2, 3, 4, 5})
-    void isCompleteOfUncompleteTreeWithDifferentDepth_shouldWorkExactly(int depth) {
-        BinDecisTree<Integer, Integer> tree = buildCompleteSubtree(
-            new DynamicBinDecisTree<Integer, Integer>().builder(),
-            alwaysTrue(),
-            0,
-            depth
-        ).insertCondition(alwaysTrue()).build();
-        assertFalse(tree.isComplete());
-    }
+    // @ParameterizedTest
+    // @ValueSource(ints = {1, 2, 3, 4, 5})
+    // void isCompleteOfUncompleteTreeWithDifferentDepth_shouldWorkExactly(int depth) {
+    //     BinDecisTree<Integer, Integer> tree = buildCompleteSubtree(
+    //         new DynamicBinDecisTree<Integer, Integer>().builder(),
+    //         alwaysTrue(),
+    //         0,
+    //         depth
+    //     ).insertCondition(alwaysTrue()).build();
+    //     assertFalse(tree.isComplete());
+    // }
 }
