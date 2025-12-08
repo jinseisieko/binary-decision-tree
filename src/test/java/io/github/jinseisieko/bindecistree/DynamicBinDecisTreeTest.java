@@ -1,5 +1,6 @@
 package io.github.jinseisieko.bindecistree;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -34,7 +35,7 @@ class DynamicBinDecisTreeTest {
 
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3, 4, 5})
-    void isCompleteOfTreeWithDifferentDepth_shouldWorkExactly(int depth) {
+    void isCompleteOfCompleteTreeWithDifferentDepth_shouldWorkExactly(int depth) {
         BinDecisTree<Integer, Integer> tree = buildCompleteSubtree(
             new DynamicBinDecisTree<Integer, Integer>().builder(),
             alwaysTrue(),
@@ -42,5 +43,17 @@ class DynamicBinDecisTreeTest {
             depth
         ).build();
         assertTrue(tree.isComplete());
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3, 4, 5})
+    void isCompleteOfUncompleteTreeWithDifferentDepth_shouldWorkExactly(int depth) {
+        BinDecisTree<Integer, Integer> tree = buildCompleteSubtree(
+            new DynamicBinDecisTree<Integer, Integer>().builder(),
+            alwaysTrue(),
+            0,
+            depth
+        ).insertCondition(alwaysTrue()).build();
+        assertFalse(tree.isComplete());
     }
 }

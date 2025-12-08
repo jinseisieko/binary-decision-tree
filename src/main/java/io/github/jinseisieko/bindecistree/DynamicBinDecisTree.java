@@ -87,6 +87,11 @@ public class DynamicBinDecisTree<D,V> implements BinDecisTree<D, V> {
         }
 
         @Override
+        public BinDecisTreeBuilder<D,V> goToRoot() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
         public BinDecisTreeBuilder<D,V> goBack() {
             throw new UnsupportedOperationException("Not supported yet.");
         }

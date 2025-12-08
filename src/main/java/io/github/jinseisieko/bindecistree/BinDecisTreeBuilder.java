@@ -18,6 +18,8 @@ public interface BinDecisTreeBuilder<D,V> {
 
     public BinDecisTreeBuilder<D,V> goToSiblingNode();
 
+    public BinDecisTreeBuilder<D,V> goToRoot();
+
     public BinDecisTreeBuilder<D,V> goBack();
 
     public BinDecisTreeBuilder<D,V> clear();
