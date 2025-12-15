@@ -34,7 +34,10 @@ public class DynamicBinDecisTree<D,V> implements BinDecisTree<D, V> {
 
     @Override
     public int getDepth() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if (!builded) {
+            throw new IllegalStateException("Unbuilded tree cannot have depth");
+        }
+        return depth;    
     }
 
     @Override
