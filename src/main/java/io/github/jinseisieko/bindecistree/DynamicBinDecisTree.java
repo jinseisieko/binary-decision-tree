@@ -10,6 +10,7 @@ public class DynamicBinDecisTree<D,V> implements BinDecisTree<D, V> {
     private DynamicBinDecisTreeNode<D, V> root;
 
     private boolean builded = false; 
+    private boolean isComplete = false;
 
     public DynamicBinDecisTree() {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -25,7 +26,10 @@ public class DynamicBinDecisTree<D,V> implements BinDecisTree<D, V> {
 
     @Override
     public boolean isComplete() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if (!builded) {
+            throw new IllegalStateException("Unbuilded tree cannot have completeness");
+        }
+        return isComplete;
     }
 
     @Override
