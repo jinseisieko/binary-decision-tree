@@ -1,6 +1,7 @@
 package io.github.jinseisieko.bindecistree;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -8,13 +9,18 @@ public class DynamicBinDecisTree<D,V> implements BinDecisTree<D, V> {
     private int depth;
     private DynamicBinDecisTreeNode<D, V> root;
 
+    private boolean builded = false; 
+
     public DynamicBinDecisTree() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public V decide(D data) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if (!builded) {
+            throw new IllegalStateException("Unbuilded tree cannot decide");
+        }
+        return root.execute(Objects.requireNonNull(data, "Data cannot be null"));
     }
 
     @Override
