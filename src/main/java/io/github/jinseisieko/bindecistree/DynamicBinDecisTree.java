@@ -13,6 +13,7 @@ public class DynamicBinDecisTree<D,V> implements BinDecisTree<D, V> {
     private boolean isComplete = false;
 
     public DynamicBinDecisTree() {
+        this.depth = -1;
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -72,7 +73,9 @@ public class DynamicBinDecisTree<D,V> implements BinDecisTree<D, V> {
 
 
         public DynamicBinDecisTreeBuilder(DynamicBinDecisTree<D,V> tree) {
-            throw new UnsupportedOperationException("Not supported yet.");
+            this.tree = (DynamicBinDecisTree<D,V>) tree.copy();
+            this.depth = this.tree.depth;
+            this.node = this.tree.root;
         }
 
         @Override
