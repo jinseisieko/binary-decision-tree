@@ -58,13 +58,14 @@
           <y:Geometry height="167.91936" width="458.8291200000002" x="621.0361600000001" y="-123.7012480000001"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="127.9421157836914" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="447.7294921875" x="5.549813906250108" xml:space="preserve" y="3.0">+ decide(data : D) : V
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="145.64813232421875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="447.7294921875" x="5.549813906250108" xml:space="preserve" y="3.0">+ decide(data : D) : V
 + isComplete() : boolean
 + getDepth() : int
 + builder() : BinDecisTreeBuilder&lt;D,V&gt;
 + toBranch() : BinDecisTreeBranch&lt;D,V&gt;
 + getAllBranches() : List&lt;BinDecisTreeBranch&lt;D,V&gt;&gt;
-+ getAllBranchesWithDepth(depth : int) : List&lt;BinDecisTreeBranch&lt;D,V&gt;&gt;<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="-0.5" nodeRatioX="2.220446049250313E-16" nodeRatioY="-0.4821342815980242" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
++ getAllBranchesWithDepth(depth : int) : List&lt;BinDecisTreeBranch&lt;D,V&gt;&gt;
++ copy() : BinDecisTree<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="-0.5" nodeRatioX="2.220446049250313E-16" nodeRatioY="-0.4821342815980242" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve"/>
             <y:MethodLabel xml:space="preserve"/>
