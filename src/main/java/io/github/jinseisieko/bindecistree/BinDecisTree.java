@@ -17,4 +17,6 @@ public interface BinDecisTree<D,V> {
     public List<BinDecisTreeBranch<D,V>> getAllBranches();
     
     public List<BinDecisTreeBranch<D,V>> getAllBranchesWithDepth(int depth);
+
+    public BinDecisTree<D,V> copy();
 }

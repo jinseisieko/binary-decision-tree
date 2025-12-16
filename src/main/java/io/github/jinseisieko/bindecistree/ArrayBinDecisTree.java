@@ -52,6 +52,11 @@ public class ArrayBinDecisTree<D,V> implements BinDecisTree<D, V>{
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    @Override
+    public BinDecisTree<D, V> copy() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     public class ArrayBinDecisTreeBuilder<D,V> implements BinDecisTreeBuilder<D, V>{
         private ArrayBinDecisTree<D,V> tree;
         private int depth;

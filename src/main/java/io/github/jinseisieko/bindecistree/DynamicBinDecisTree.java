@@ -60,10 +60,16 @@ public class DynamicBinDecisTree<D,V> implements BinDecisTree<D, V> {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    @Override
+    public BinDecisTree<D, V> copy() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     public class DynamicBinDecisTreeBuilder<D,V> implements BinDecisTreeBuilder<D, V> {
         private DynamicBinDecisTree<D,V> tree;
         private int depth;
         private DynamicBinDecisTreeNode<D,V> node;
+
 
         public DynamicBinDecisTreeBuilder(DynamicBinDecisTree<D,V> tree) {
             throw new UnsupportedOperationException("Not supported yet.");
