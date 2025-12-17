@@ -1,4 +1,4 @@
-package io.github.jinseisieko.bindecistree;
+package io.github.jinseisieko.decisiontree;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -20,7 +20,7 @@ class TestUtilities {
         return t -> true;
     }
 
-    public static <T> Function<T,Integer> alwaysZero() {
+    public static <T> Function<T, Integer> alwaysZero() {
         return t -> 0;
     }
     
@@ -49,48 +49,48 @@ class TestUtilities {
         }
     }
 
-    public static <D, V> BinDecisTreeBuilder<D, V> buildCompleteSubtree(
-            BinDecisTreeBuilder<D, V> builder,
-            Predicate<D> condition,
-            V leafValue,
+    public static <I, O> DecisionTreeBuilder<I, O> buildCompleteSubtree(
+            DecisionTreeBuilder<I, O> builder,
+            Predicate<I> condition,
+            O leafValue,
             int remainingDepth) {
         if (remainingDepth == 1) {
             builder.insertCondition(condition)
-                .goToTrueNode()
+                .goToTrueChild()
                 .insertOutcome(leafValue)
-                .goToSiblingNode()
+                .goToSibling()
                 .insertOutcome(leafValue)
-                .goBack();
+                .goToParent();
         } else {
             builder.insertCondition(condition);
-            builder.goToTrueNode();
+            builder.goToTrueChild();
             buildCompleteSubtree(builder, condition, leafValue, remainingDepth - 1);
-            builder.goToSiblingNode();
+            builder.goToSibling();
             buildCompleteSubtree(builder, condition, leafValue, remainingDepth - 1);
-            builder.goBack();
+            builder.goToParent();
         }
         return builder;
     }
 
-    public static <D, V> BinDecisTreeBuilder<D, V> buildCompleteSubtree(
-            BinDecisTreeBuilder<D, V> builder,
-            Predicate<D> condition,
-            Function<D, V> leafFunction,
+    public static <I, O> DecisionTreeBuilder<I, O> buildCompleteSubtree(
+            DecisionTreeBuilder<I, O> builder,
+            Predicate<I> condition,
+            Function<I, O> leafFunction,
             int remainingDepth) {
         if (remainingDepth == 1) {
             builder.insertCondition(condition)
-                .goToTrueNode()
+                .goToTrueChild()
                 .insertOutcome(leafFunction)
-                .goToSiblingNode()
+                .goToSibling()
                 .insertOutcome(leafFunction)
-                .goBack();
+                .goToParent();
         } else {
             builder.insertCondition(condition);
-            builder.goToTrueNode();
+            builder.goToTrueChild();
             buildCompleteSubtree(builder, condition, leafFunction, remainingDepth - 1);
-            builder.goToSiblingNode();
+            builder.goToSibling();
             buildCompleteSubtree(builder, condition, leafFunction, remainingDepth - 1);
-            builder.goBack();
+            builder.goToParent();
         }
         return builder;
     }
