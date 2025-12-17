@@ -1,29 +1,32 @@
-package io.github.jinseisieko.bindecistree;
+package io.github.jinseisieko.decisiontree;
 
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class ArrayBinDecisTree<D,V> implements BinDecisTree<D, V>{
-    private final int DEPTH;
-    private Predicate<D>[] conditions;
-    private Function<D,V>[] outcomes;
+/**
+ * Array-backed implementation of a binary decision tree.
+ */
+public class ArrayDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
+    private final int maxDepth;
+    private Predicate<I>[] conditions;
+    private Function<I, O>[] outcomes;
 
-    public ArrayBinDecisTree(int depth) {
+    public ArrayDecisionTree(int maxDepth) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public ArrayBinDecisTree(int depth, BinDecisTreeBranch<D,V> branch) {
+    public ArrayDecisionTree(int maxDepth, DecisionBranch<I, O> branch) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public V decide(D data) {
+    public O decide(I input) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public boolean isComplete() {
+    public boolean isFullyDefined() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -33,37 +36,37 @@ public class ArrayBinDecisTree<D,V> implements BinDecisTree<D, V>{
     }
 
     @Override
-    public BinDecisTreeBuilder<D, V> builder() {
+    public DecisionTreeBuilder<I, O> builder() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public BinDecisTreeBranch<D, V> toBranch() {
+    public DecisionBranch<I, O> asBranch() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public List<BinDecisTreeBranch<D, V>> getAllBranches() {
+    public List<DecisionBranch<I, O>> getAllBranches() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public List<BinDecisTreeBranch<D, V>> getAllBranchesWithDepth(int depth) {
+    public List<DecisionBranch<I, O>> getAllBranchesWithDepth(int depth) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public BinDecisTree<D, V> copy() {
+    public BinaryDecisionTree<I, O> copy() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public class ArrayBinDecisTreeBuilder<D,V> implements BinDecisTreeBuilder<D, V>{
-        private ArrayBinDecisTree<D,V> tree;
+    public class Builder implements DecisionTreeBuilder<I, O> {
+        private ArrayDecisionTree<I, O> tree;
         private int depth;
-        private Predicate<D>[] nodes;
-        private Function<D, V>[] outcomes;
+        private Predicate<I>[] nodes;
+        private Function<I, O>[] outcomes;
 
-        public ArrayBinDecisTreeBuilder(ArrayBinDecisTree<D,V> tree) {
+        public Builder(ArrayDecisionTree<I, O> tree) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
@@ -72,62 +75,62 @@ public class ArrayBinDecisTree<D,V> implements BinDecisTree<D, V>{
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> insertCondition(Predicate<D> condition) {
+        public DecisionTreeBuilder<I, O> insertCondition(Predicate<I> condition) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> insertOutcome(Function<D, V> handler) {
+        public DecisionTreeBuilder<I, O> insertOutcome(Function<I, O> handler) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> insertOutcome(V value) {
+        public DecisionTreeBuilder<I, O> insertOutcome(O value) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> goToTrueNode() {
+        public DecisionTreeBuilder<I, O> goToTrueChild() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> goToFalseNode() {
+        public DecisionTreeBuilder<I, O> goToFalseChild() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> goToSiblingNode() {
+        public DecisionTreeBuilder<I, O> goToSibling() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> goToRoot() {
+        public DecisionTreeBuilder<I, O> goToRoot() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> goBack() {
+        public DecisionTreeBuilder<I, O> goToParent() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> clear() {
+        public DecisionTreeBuilder<I, O> clearTree() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> clearBranch() {
+        public DecisionTreeBuilder<I, O> clearSubtree() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public BinDecisTreeBuilder<D,V> insertBranch(BinDecisTreeBranch<D, V> branch) {
+        public DecisionTreeBuilder<I, O> insertBranch(DecisionBranch<I, O> branch) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
         @Override
-        public BinDecisTreeBranch<D, V> toBranch() {
+        public DecisionBranch<I, O> asBranch() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
@@ -137,7 +140,7 @@ public class ArrayBinDecisTree<D,V> implements BinDecisTree<D, V>{
         }
 
         @Override
-        public BinDecisTree<D, V> build() {
+        public BinaryDecisionTree<I, O> build() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
     }
