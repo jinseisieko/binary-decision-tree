@@ -222,11 +222,11 @@
 + insertBranch(branch : DecisionBranch&lt;I,O&gt;) : DecisionTreeBuilder&lt;I,O&gt;
 + asBranch() : DecisionBranch&lt;I,O&gt;
 + asBranchOfSubtree() : DecisionBranch&lt;I,O&gt;
-+ getAllBranches() : List&lt;DecisionBr DecisionBranch&lt;I,O&gt;anch&lt;I,O&gt;&gt;
++ getAllBranches() : List&lt;DecisionBranch&lt;I,O&gt;&gt;
 + getAllBranchesWithDepth(depth : int) : List&lt;DecisionBranch&lt;I,O&gt;&gt;
 + getDepth() : int
 + isComplete() : boolean
-+ isInitialized() : boolean
++ isFullyDefined() : boolean
 + build() : BinaryDecisionTree&lt;I,O&gt;<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.4794286774726785" nodeRatioX="-1.1102230246251565E-16" nodeRatioY="0.5" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve"/>
@@ -900,7 +900,7 @@
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="66.07697189189582" ty="-4.409833066946476">
-            <y:Point x="1103.4883239618034" y="-26.132957295491792"/>
+            <y:Point x="1103.4883239618034" y="-22.351891643217783"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
