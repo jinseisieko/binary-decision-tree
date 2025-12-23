@@ -26,32 +26,7 @@ public class ArrayDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
     }
 
     @Override
-    public boolean isFullyDefined() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public int getDepth() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
     public DecisionTreeBuilder<I, O> builder() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public DecisionBranch<I, O> asBranch() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public List<DecisionBranch<I, O>> getAllBranches() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public List<DecisionBranch<I, O>> getAllBranchesWithDepth(int depth) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -67,10 +42,6 @@ public class ArrayDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
         private Function<I, O>[] outcomes;
 
         public Builder(ArrayDecisionTree<I, O> tree) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        public void goToIndex(int index) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
@@ -135,7 +106,32 @@ public class ArrayDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
         }
 
         @Override
+        public DecisionBranch<I, O> asBranchoOfSubtree() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public List<DecisionBranch<I, O>> getAllBranches() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public List<DecisionBranch<I, O>> getAllBranchesWithDepth(int depth) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
         public int getDepth() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public boolean isComplete() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public boolean isFullyDefined() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
@@ -143,5 +139,7 @@ public class ArrayDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
         public BinaryDecisionTree<I, O> build() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
+
+        
     }
 }

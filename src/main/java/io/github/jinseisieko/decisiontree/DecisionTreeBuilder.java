@@ -1,5 +1,6 @@
 package io.github.jinseisieko.decisiontree;
 
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -29,7 +30,17 @@ public interface DecisionTreeBuilder<I, O> {
 
     DecisionBranch<I, O> asBranch();
 
+    DecisionBranch<I, O> asBranchoOfSubtree();
+
+    List<DecisionBranch<I,O>> getAllBranches();
+
+    List<DecisionBranch<I,O>> getAllBranchesWithDepth(int depth);
+
     int getDepth();
+
+    boolean isComplete();
+
+    boolean isFullyDefined();
 
     BinaryDecisionTree<I, O> build();
 }

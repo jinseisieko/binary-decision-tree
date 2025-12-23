@@ -9,7 +9,6 @@ public class DynamicDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
     private int depth;
     private AbstractDecisionNode<I, O> root;
 
-    private boolean built = false;
     private boolean fullyDefined = false;
 
     public DynamicDecisionTree() {
@@ -19,45 +18,14 @@ public class DynamicDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
 
     @Override
     public O decide(I input) {
-        if (!built) {
+        if (!fullyDefined) {
             throw new IllegalStateException("Unbuilt tree cannot decide");
         }
         return root.execute(Objects.requireNonNull(input, "Input cannot be null"));
     }
 
     @Override
-    public boolean isFullyDefined() {
-        if (!built) {
-            throw new IllegalStateException("Unbuilt tree cannot have completeness");
-        }
-        return fullyDefined;
-    }
-
-    @Override
-    public int getDepth() {
-        if (!built) {
-            throw new IllegalStateException("Unbuilt tree cannot have depth");
-        }
-        return depth;
-    }
-
-    @Override
     public DecisionTreeBuilder<I, O> builder() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public DecisionBranch<I, O> asBranch() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public List<DecisionBranch<I, O>> getAllBranches() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public List<DecisionBranch<I, O>> getAllBranchesWithDepth(int depth) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -138,7 +106,32 @@ public class DynamicDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
         }
 
         @Override
+        public DecisionBranch<I, O> asBranchoOfSubtree() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public List<DecisionBranch<I, O>> getAllBranches() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public List<DecisionBranch<I, O>> getAllBranchesWithDepth(int depth) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
         public int getDepth() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public boolean isComplete() {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public boolean isFullyDefined() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
@@ -146,5 +139,7 @@ public class DynamicDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
         public BinaryDecisionTree<I, O> build() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
+
+
     }
 }
