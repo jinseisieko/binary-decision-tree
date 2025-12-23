@@ -18,7 +18,7 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="28.0" width="458.8291200000002" x="600.1839943645884" y="-133.46383724321765"/>
+          <y:Geometry height="28.0" width="458.8291200000002" x="600.1839943645884" y="-60.717516302768345"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.706016540527344" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="236.51817321777344" x="111.15547339111339" xml:space="preserve" y="3.0">BinaryDecisionTree&lt;I,O&gt; :: interface<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -33,7 +33,7 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="28.0" width="458.8291200000002" x="600.1839943645884" y="-105.46383724321763"/>
+          <y:Geometry height="28.0" width="458.8291200000002" x="600.1839943645884" y="-32.71751630276832"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="227.4145600000001" y="3.0">
@@ -55,16 +55,11 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="167.91936" width="458.8291200000002" x="600.1839943645884" y="-77.46383724321763"/>
+          <y:Geometry height="90.39389031884068" width="458.8291200000002" x="600.1839943645884" y="-4.717516302768317"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="145.64813232421875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="417.1534423828125" x="20.837838808593858" xml:space="preserve" y="3.0">+ decide(input : I) : O
-+ isFullyDefined() : boolean
-+ getDepth() : int
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="57.11804962158203" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="232.2542266845703" x="113.28744665771495" xml:space="preserve" y="3.0">+ decide(input : I) : O
 + builder() : DecisionTreeBuilder&lt;I,O&gt;
-+ asBranch() : DecisionBranch&lt;I,O&gt;
-+ getAllBranches() : List&lt;DecisionBranch&lt;I,O&gt;&gt;
-+ getAllBranchesWithDepth(depth : int) : List&lt;DecisionBranch&lt;I,O&gt;&gt;
 + copy() : BinaryDecisionTree&lt;I,O&gt;<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="-0.5" nodeRatioX="2.220446049250313E-16" nodeRatioY="-0.4821342815980242" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve"/>
@@ -211,10 +206,10 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="259.9148268497037" width="494.4813143188409" x="1142.0762394055268" y="216.0443199999997"/>
+          <y:Geometry height="350.65013249095216" width="494.4813143188409" x="1142.0762394055268" y="216.0443199999997"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="251.8842315673828" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="448.6913757324219" x="22.8949692932095" xml:space="preserve" y="3.0">+ insertCondition(condition : Predicate&lt;I&gt;) : DecisionTreeBuilder&lt;I,O&gt;
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="340.41431427001953" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="448.6913757324219" x="22.8949692932095" xml:space="preserve" y="3.0">+ insertCondition(condition : Predicate&lt;I&gt;) : DecisionTreeBuilder&lt;I,O&gt;
 + insertOutcome(handler : Function&lt;I,O&gt;) : DecisionTreeBuilder&lt;I,O&gt;
 + insertOutcome(value : O) : DecisionTreeBuilder&lt;I,O&gt;
 + goToTrueChild() : DecisionTreeBuilder&lt;I,O&gt;
@@ -226,8 +221,13 @@
 + clearSubtree() : DecisionTreeBuilder&lt;I,O&gt;
 + insertBranch(branch : DecisionBranch&lt;I,O&gt;) : DecisionTreeBuilder&lt;I,O&gt;
 + asBranch() : DecisionBranch&lt;I,O&gt;
++ asBranchOfSubtree() : DecisionBranch&lt;I,O&gt;
++ getAllBranches() : List&lt;DecisionBr DecisionBranch&lt;I,O&gt;anch&lt;I,O&gt;&gt;
++ getAllBranchesWithDepth(depth : int) : List&lt;DecisionBranch&lt;I,O&gt;&gt;
 + getDepth() : int
-+ build() : BinaryDecisionTree&lt;I,O&gt;<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.49444307951349753" nodeRatioX="-1.1102230246251565E-16" nodeRatioY="0.5" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
++ isComplete() : boolean
++ isInitialized() : boolean
++ build() : BinaryDecisionTree&lt;I,O&gt;<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.4794286774726785" nodeRatioX="-1.1102230246251565E-16" nodeRatioY="0.5" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel xml:space="preserve"/>
             <y:MethodLabel xml:space="preserve"/>
@@ -239,7 +239,7 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="28.0" width="394.14912000000015" x="1045.1852800000001" y="552.4558616182538"/>
+          <y:Geometry height="28.0" width="394.14912000000015" x="1045.1852800000001" y="602.8566765744063"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.706016540527344" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="241.65316772460938" x="76.24797613769539" xml:space="preserve" y="3.0">ArrayDecisionTree&lt;I,O&gt;.Builder&lt;I,O&gt;<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -254,7 +254,7 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="106.49734399999997" width="394.14912000000015" x="1045.1852800000004" y="580.4558616182538"/>
+          <y:Geometry height="106.49734399999997" width="394.14912000000015" x="1045.1852800000004" y="630.8566765744063"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="92.53008270263672" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="191.5771484375" x="101.28598578125008" xml:space="preserve" y="3.0">- tree : ArrayDecisionTree&lt;I,O&gt;
@@ -273,7 +273,7 @@
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="61.91999999999999" width="394.14912000000015" x="1045.1852800000004" y="686.9532056182538"/>
+          <y:Geometry height="61.91999999999999" width="394.14912000000015" x="1045.1852800000004" y="737.3540205744063"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="39.41203308105469" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="246.5152130126953" x="73.81695349365242" xml:space="preserve" y="3.0">+ Builder(tree : ArrayDecisionTree&lt;I,O&gt;)
@@ -656,7 +656,7 @@
           <y:Geometry height="42.39999999999998" width="174.1333333333332" x="1384.3393527519927" y="-248.18836841884826"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="36.688228607177734" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="166.7091522216797" x="3.7120905558267623" xml:space="preserve" y="2.8558856964110646">Delegate execution to
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="36.688228607177734" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="166.7091522216797" x="3.7120905558267623" xml:space="preserve" y="2.8558856964111214">Delegate execution to
  a node based on a condition<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
         </y:UMLNoteNode>
       </data>
@@ -668,7 +668,7 @@
           <y:Geometry height="42.39999999999998" width="290.6458232608111" x="1229.6950854032411" y="-330.27324292437686"/>
           <y:Fill color="#D4D4D4" color2="#000000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="36.688228607177734" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="229.8776092529297" x="30.3841070039407" xml:space="preserve" y="2.8558856964111783">copy returns the instance with the same
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="36.688228607177734" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="229.8776092529297" x="30.3841070039407" xml:space="preserve" y="2.8558856964111214">copy returns the instance with the same
  condition or handler (without children)<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
         </y:UMLNoteNode>
       </data>
@@ -749,7 +749,7 @@
     <edge id="e2" source="n12" target="n11">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-147.05705656494706" ty="92.42454541139284"/>
+          <y:Path sx="0.0" sy="0.0" tx="-147.05705656494706" ty="124.68961269632118"/>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
           <y:BendStyle smoothed="false"/>
@@ -759,7 +759,7 @@
     <edge id="e3" source="n15" target="n11">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-28.225974013470704" ty="93.58501375979836">
+          <y:Path sx="0.0" sy="0.0" tx="72.33075035258685" ty="48.217360939174114">
             <y:Point x="804.3507200000001" y="439.5867471846499"/>
           </y:Path>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
@@ -796,7 +796,7 @@
     <edge id="e6" source="n3" target="n2">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-11.48783436458848" ty="-4.1799438943582885"/>
+          <y:Path sx="0.0" sy="0.0" tx="-11.48783436458848" ty="-2.250135957673557"/>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
           <y:BendStyle smoothed="false"/>
@@ -806,8 +806,8 @@
     <edge id="e7" source="n6" target="n2">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="52.29864777384239" sy="-7.0645478592260815" tx="-8.80440007004222" ty="42.580345185990296">
-            <y:Point x="446.2602477738424" y="49.07618794277268"/>
+          <y:Path sx="52.29864777384239" sy="-7.0645478592260815" tx="-8.80440007004222" ty="22.921734887988983">
+            <y:Point x="446.2602477738424" y="63.401163744641"/>
           </y:Path>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
@@ -840,7 +840,7 @@
     <edge id="e10" source="n2" target="n9">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="216.40573068569802" sy="52.511473449762335" tx="-225.08989852084824" ty="-4.067217977177052">
+          <y:Path sx="216.40573068569802" sy="28.267832675747037" tx="-225.08989852084824" ty="-4.067217977177052">
             <y:Point x="1046.0042850502866" y="169.97710202282258"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
@@ -929,7 +929,6 @@
       </data>
     </edge>
     <edge id="e18" source="n6" target="n29">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-47.08956768702319" ty="37.0341963351612">
@@ -942,7 +941,6 @@
       </data>
     </edge>
     <edge id="e19" source="n3" target="n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -953,7 +951,6 @@
       </data>
     </edge>
     <edge id="e20" source="n3" target="n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="-29.25443199999998"/>
