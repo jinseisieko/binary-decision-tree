@@ -34,5 +34,10 @@ public interface BinaryDecisionTree<I, O> {
      */
     DecisionTreeBuilder<I, O> builder();
 
+    /**
+     * Creates and returns a deep copy of this binary decision tree
+     * 
+     * @return a new {@code BinaryDecisionTree} instance identical in structure
+     */
     BinaryDecisionTree<I, O> copy();
 }
