@@ -26,6 +26,12 @@ public interface BinaryDecisionTree<I, O> {
      */
     O decide(I input);
 
+    /**
+     * Returns a {@code DecisionTreeBuilder} instance that operates on a copy of this tree,
+     * allowing modification and reconstruction into a new, updated tree.
+     *
+     * @return a {@code DecisionTreeBuilder} for modifying a copy of this tree
+     */
     DecisionTreeBuilder<I, O> builder();
 
     BinaryDecisionTree<I, O> copy();
