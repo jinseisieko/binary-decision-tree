@@ -1,7 +1,7 @@
 package io.github.jinseisieko.decisiontree;
 
 /**
- * Represents a subtree rooted at some vertex within an existing binary decision tree.
+ * Represents a subtree rooted at some node within an existing binary decision tree.
  * 
  * <p>This interface provides a reference to a specific section of the tree rather than
  * storing independent data.
@@ -13,8 +13,18 @@ package io.github.jinseisieko.decisiontree;
  */
 public interface DecisionBranch<I, O> {
 
+    /**
+     * Detaches the false branch and returns the subtree rooted at the true node.
+     *
+     * @return the {@code DecisionBranch} representing the subtree rooted at the true node
+     */
     DecisionBranch<I, O> getTrueBranch();
 
+    /**
+     * Detaches the true branch and returns the subtree rooted at the false node.
+     *
+     * @return the {@code DecisionBranch} representing the subtree rooted at the false node
+     */
     DecisionBranch<I, O> getFalseBranch();
 
     int getDepth();
