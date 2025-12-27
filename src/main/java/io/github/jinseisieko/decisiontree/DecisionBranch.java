@@ -27,5 +27,10 @@ public interface DecisionBranch<I, O> {
      */
     DecisionBranch<I, O> getFalseBranch();
 
+    /**
+     * Returns the number of edges in the longest path form root to leaf.
+     * 
+     * @return the depth of the binary decision tree
+     */
     int getDepth();
 }
