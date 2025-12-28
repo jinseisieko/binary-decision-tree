@@ -4,6 +4,17 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
+/**
+ * Provides a step-by-step builder for constructing and modifying a binary decision tree.
+ *
+ * <p>This builder enables controlled navigation through the tree structure, allowing the user 
+ * to insert conditions and outcomes.
+ *
+ * @param <I> the type of the input value
+ * @param <O> the type of the output value
+ *
+ * @author jinseisieko
+ */
 public interface DecisionTreeBuilder<I, O> {
 
     DecisionTreeBuilder<I, O> insertCondition(Predicate<I> condition);
