@@ -17,6 +17,14 @@ import java.util.function.Predicate;
  */
 public interface DecisionTreeBuilder<I, O> {
 
+    /**
+     * Replaces the current node with a new conditional node defined by the specified predicate.
+     *
+     * <p>The new node requires the explicit insertion of both child branches.
+     *
+     * @param condition the predicate determining branch selection based on the input value {@code I}
+     * @return this builder instance
+     */
     DecisionTreeBuilder<I, O> insertCondition(Predicate<I> condition);
 
     DecisionTreeBuilder<I, O> insertOutcome(Function<I, O> handler);
