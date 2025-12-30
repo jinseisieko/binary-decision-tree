@@ -40,7 +40,19 @@ public interface DecisionTreeBuilder<I, O> {
      */
     DecisionTreeBuilder<I, O> insertOutcome(Function<I, O> handler);
 
-
+    /**
+     * Replaces the current node with a new outcome node defined by the given return value.
+     *
+     * <p>The created node becomes a leaf in the tree.
+     * 
+     * <p>It automatically generates a handler that is used to return the given value.
+     * 
+     * <p>The handler is a function that computes the tree result (the output value
+     * {@code O}) based on the input value {@code I}.
+     *
+     * @param value the return value {@code O}
+     * @return this builder instance
+     */
     DecisionTreeBuilder<I, O> insertOutcome(O value);
 
     DecisionTreeBuilder<I, O> goToTrueChild();
