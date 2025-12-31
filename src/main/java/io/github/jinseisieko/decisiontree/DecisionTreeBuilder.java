@@ -55,8 +55,18 @@ public interface DecisionTreeBuilder<I, O> {
      */
     DecisionTreeBuilder<I, O> insertOutcome(O value);
 
+    /**
+     * Moves the builder’s current position to the true child of the current node.
+     * 
+     * @return this builder instance
+     */
     DecisionTreeBuilder<I, O> goToTrueChild();
 
+    /**
+     * Moves the builder's current position to the true child of the current node.
+     * 
+     * @return this builder instance
+     */
     DecisionTreeBuilder<I, O> goToFalseChild();
 
     DecisionTreeBuilder<I, O> goToSibling();
