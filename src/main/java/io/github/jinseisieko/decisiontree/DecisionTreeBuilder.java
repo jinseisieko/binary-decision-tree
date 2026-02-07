@@ -83,7 +83,7 @@ public interface DecisionTreeBuilder<I, O> {
 
     DecisionBranch<I, O> asBranch();
 
-    DecisionBranch<I, O> asBranchoOfSubtree();
+    DecisionBranch<I, O> asBranchOfSubtree();
 
     List<DecisionBranch<I,O>> getAllBranches();
 

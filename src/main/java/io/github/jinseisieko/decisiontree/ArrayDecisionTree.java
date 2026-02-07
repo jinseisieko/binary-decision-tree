@@ -106,7 +106,7 @@ public class ArrayDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
         }
 
         @Override
-        public DecisionBranch<I, O> asBranchoOfSubtree() {
+        public DecisionBranch<I, O> asBranchOfSubtree() {
             throw new UnsupportedOperationException("Not supported yet.");
         }
 
