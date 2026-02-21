@@ -18,6 +18,14 @@ abstract class AbstractDecisionNode<I, O> {
         this.falseChild = Objects.requireNonNull(falseChild, "Node cannot be null");
     }
 
+    /**
+     * Package-private method to clear children (used by Builder.clearSubtree())
+     */
+    void clearChildren() {
+        this.trueChild = null;
+        this.falseChild = null;
+    }
+
     public AbstractDecisionNode<I, O> getTrueChild() {
         return trueChild;
     }
