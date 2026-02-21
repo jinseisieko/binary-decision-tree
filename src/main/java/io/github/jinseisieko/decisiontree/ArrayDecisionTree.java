@@ -35,6 +35,16 @@ public class ArrayDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    @Override
+    public int getDepth() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean isFullyDefined() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     public class Builder implements DecisionTreeBuilder<I, O> {
         private ArrayDecisionTree<I, O> tree;
         private int depth;

@@ -36,8 +36,24 @@ public interface BinaryDecisionTree<I, O> {
 
     /**
      * Creates and returns a deep copy of this binary decision tree
-     * 
+     *
      * @return a new {@code BinaryDecisionTree} instance identical in structure
      */
     BinaryDecisionTree<I, O> copy();
+
+    /**
+     * Returns the depth of the tree (the number of edges in the longest path from root to leaf).
+     *
+     * @return the depth of the tree
+     * @throws IllegalStateException if the tree is empty
+     */
+    int getDepth();
+
+    /**
+     * Checks whether the tree is fully defined (all branches lead to outcomes).
+     *
+     * @return true if the tree is fully defined, false otherwise
+     * @throws IllegalStateException if the tree is empty
+     */
+    boolean isFullyDefined();
 }
