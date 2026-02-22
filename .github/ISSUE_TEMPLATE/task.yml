@@ -1,0 +1,49 @@
+name: Task
+description: Propose a new feature, improvement, or general task
+title: "[TASK] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing to the Complete Binary Decision Tree library!
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Clearly describe what you want to achieve or implement.
+      placeholder: Describe the task or feature...
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this task important? What problem does it solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: List the specific requirements or acceptance criteria for this task.
+      placeholder: |
+        - [ ] Implement feature X
+        - [ ] Add unit tests
+        - [ ] Update documentation
+
+  - type: textarea
+    id: implementation-notes
+    attributes:
+      label: Implementation Notes
+      description: Any suggestions on how to implement this (optional).
+      placeholder: Technical considerations, design patterns, etc.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context, references, or mockups here.
