@@ -10,6 +10,11 @@ import static io.github.jinseisieko.decisiontree.TestUtilities.assertThrowsWithN
 class ConditionNodeTest {
 
     @Test
+    void conditionNode_constructor_nullCondition_shouldThrowNullPointerException() {
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> new ConditionNode<>(null));
+    }
+
+    @Test
     void isComplete_shouldBeFalseImmediatelyAfterCreation() {
         AbstractDecisionNode<Integer, Integer> node = new ConditionNode<>(alwaysTrue());
         assertFalse(node.isComplete());

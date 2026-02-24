@@ -23,7 +23,8 @@ final class OutcomeNode<I, O> extends AbstractDecisionNode<I, O> {
     }
 
     public void setHandler(O value) {
-        this.handler = input -> Objects.requireNonNull(value, "Value cannot be null");
+        Objects.requireNonNull(value, "Value cannot be null");
+        this.handler = input -> value;
     }
 
     @Override

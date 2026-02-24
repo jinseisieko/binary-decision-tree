@@ -1,5 +1,6 @@
 package io.github.jinseisieko.decisiontree;
 
+import java.util.function.Function;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -7,6 +8,16 @@ import static io.github.jinseisieko.decisiontree.TestUtilities.alwaysZero;
 import static io.github.jinseisieko.decisiontree.TestUtilities.assertThrowsWithNonEmptyMessage;
 
 class OutcomeNodeTest {
+
+    @Test
+    void outcomeNode_constructor_nullHandler_shouldThrowNullPointerException() {
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> new OutcomeNode<>((Function<Integer, Integer>) null));
+    }
+
+    @Test
+    void outcomeNode_constructor_nullValue_shouldThrowNullPointerException() {
+        assertThrowsWithNonEmptyMessage(NullPointerException.class, () -> new OutcomeNode<>((Integer) null));
+    }
 
     @Test
     void isComplete_shouldBeTrueImmediatelyAfterCreation() {
