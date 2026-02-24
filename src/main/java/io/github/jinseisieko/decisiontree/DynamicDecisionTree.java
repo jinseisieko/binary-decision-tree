@@ -360,7 +360,7 @@ public class DynamicDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
             if (tree.root == null) {
                 throw new IllegalStateException("Cannot get depth: tree is empty");
             }
-            return calculateDepth(tree.root);
+            return tree.depth;
         }
 
         private int calculateDepth(AbstractDecisionNode<I, O> node) {
