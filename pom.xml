@@ -6,12 +6,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.jinseisieko</groupId>
-  <artifactId>bindecistree</artifactId>
+  <artifactId>decisiontree</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>Binary Decision Tree</name>
-  <description>A reusable Java library</description>
+  <name>Decision Tree</name>
+  <description>A Java library for working with binary decision trees</description>
   <url>https://github.com/jinseisieko/binary-decision-tree</url>
 
   <properties>
@@ -21,7 +21,6 @@
   </properties>
 
   <dependencies>
-    <!-- JUnit Jupiter for unit tests -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
@@ -35,7 +34,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.2.5</version> <!-- Runs JUnit 5 tests -->
+        <version>3.2.5</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -43,12 +42,14 @@
         <version>3.12.1</version>
         <configuration>
           <release>21</release>
+          <compilerArgs>
+            <arg>--enable-preview</arg>
+          </compilerArgs>
         </configuration>
       </plugin>
     </plugins>
   </build>
 
-  <!-- Enable publishing to GitHub Packages (optional but ready) -->
   <distributionManagement>
     <repository>
       <id>github</id>

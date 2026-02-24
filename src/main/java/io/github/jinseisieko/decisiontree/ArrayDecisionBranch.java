@@ -1,14 +1,14 @@
-package io.github.jinseisieko.bindecistree;
+package io.github.jinseisieko.decisiontree;
 
-class ArrayBinDecisTreeBranch<D,V>  implements BinDecisTreeBranch<D, V> {
+class ArrayDecisionBranch<I, O> implements DecisionBranch<I, O> {
 
     @Override
-    public BinDecisTreeBranch<D, V> getTrueBranch() {
+    public DecisionBranch<I, O> getTrueBranch() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public BinDecisTreeBranch<D, V> getFalseBranch() {
+    public DecisionBranch<I, O> getFalseBranch() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -16,5 +16,4 @@ class ArrayBinDecisTreeBranch<D,V>  implements BinDecisTreeBranch<D, V> {
     public int getDepth() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
 }

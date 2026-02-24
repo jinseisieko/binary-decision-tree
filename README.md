@@ -1,159 +1,75 @@
-# Classes
-## CBDTreeNode
-The base class for nodes (vertices) of binary tree. It has the level (integer) (e.g. level = 0 means that it is root of tree). 
+# Decision Tree
 
-## UML diagram
-![UML diagram](assets/uml_diagram.png)
-# Prototype of usage 
-```java
-BDTree<int, int> machine = DynamicBDTree<>();
-BDTreeBuilder<int, int> builder = machine.builder();
-builder.insertCondition(a -> a > 10);
-builder.goToTrueBranch();
-builder.insertOutcome(1);
-builder.goBack();
-builder.goToFalseBranch();
-builder.insertCondition(a -> a < 5);
-builder.goToTrueBranch();
-builder.insertOutcome(2);
-builder.goBack();
-builder.goToFalseBranch();
-builder.insertOutcome(3);
-int depth = machine.getDepth();
-int result = machine.decide(9);
+The `Decision Tree` library allows you to create, modify, and use binary decision trees for various tasks. This is a toolkit for working with trees that you designed – **not a machine learning trainer**. It can be used in *Evolution Models*, *Game Development*, and *Rule-Based Systems*.
 
-// ===================================== //
+[![Java 21+](https://img.shields.io/badge/Java-21+-blue.svg)](https://adoptium.net/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-BDTree<int, int> machine = ArrayBDTree<>(2);
-BDTreeBuilder<int, int> builder = machine.builder();
-builder.insertCondition(a -> a > 10);
-builder.goToTrueBranch();
-builder.insertOutcome(1);
-builder.goBack();
-builder.goToFalseBranch();
-builder.insertCondition(a -> a < 5);
-builder.goToTrueBranch();
-builder.insertOutcome(2);
-builder.goBack();
-builder.goToFalseBranch();
-builder.insertOutcome(3);
-int depth = machine.getDepth();
-int result = machine.decide(9);
+## 📦 Installing
 
-// ===================================== //
+### Maven (via GitHub Packages)
+>
+> ⚠️ To use GitHub Packages, [authenticate with GitHub](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages).
 
-BDTree<int, int> casino = new ArrayBDTree<>();
-BDTreeBuilder<> builder = validator.builder();
-builder.insertOutcome(a -> {
-	Random random = new Random();
-	if (Math.random() > 0.5) {
-		a*=2;
-	} else {
-		a=0;
-	}
-	return a;
-})
-
-// ===================================== //
-
-BDTree<int, int> casino = new ArrayBDTree<>();
-BDTreeBuilder<> builder = validator.builder();
-builder.insertCondition(a -> {
-	Random random = new Random();
-	if (Math.random() > 0.5) {
-		a*=2;
-		return true;
-	}
-	return false;
-})
-builder.goToTrueBranch();
-builder.insertOutcome(a -> {
-	Random random = new Random();
-	if (Math.random() > 0.5) {
-		a*=2;
-	} else {
-		a=0;
-	}
-	return a;
-})
-builder.goBack();
-builder.goToFalseBranch();
-builder.insertOutcome(0);
-
-// ===================================== //
-
-interface User {
-	public int getAge();
-	public int getBalance();
-}
-
-enum AdvertisementType {
-	GENERAL,
-	RICH,
-	CHILD
-}
-
-BDTree<User, AdvertisementTypeA> tree = new DynamicBDTree<>();
-BDTreeBuilder<> builder = tree.builder();
-builder.insertCondition(user -> {
-	return user.getAge() > 18;
-});
-builder.goToTrueBranch();
-builder.insertCondition(user -> {
-	return user.getBalance() > 10000;
-});
-builder.goToTrueBranch();
-builder.insertOutcome(AdvertisementType.RICH);
-builder.goBack();
-builder.goToFalseBranch();
-builder.insertOutcome(AdvertisementType.GENERAL);
-builder.goBack();
-builder.goBack();
-builder.goToFalseBranch();
-builder.insertOutcome(AdvertisementType.CHILD);
+```xml
+<dependency>
+    <groupId>io.github.jinseisieko</groupId>
+    <artifactId>decisiontree</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
 
-# Notes
-- rename library to BinDecisTree (bindecistree)
+### Local Development
 
-Prototype of nodes 
-```java
-abstract class Node<D, V> {
-    public abstract V execute(D data);
-}
-
-class CNode<D, V> extends Node<D, V> {
-    private Predicate<D> condition;
-    private Node<D, V> trueBranch;
-    private Node<D, V> falseBranch;
-
-    public CNode(Predicate<D> condition, Node<D, V> trueBranch, Node<D, V> falseBranch) {
-        this.condition = condition;
-        this.trueBranch = trueBranch;
-        this.falseBranch = falseBranch;
-    }
-
-    @Override
-    public V execute(D data) {
-        // check for nulls and other errors
-        if (condition.test(data)) {
-            return trueBranch.execute(data);
-        } else {
-            return falseBranch.execute(data);
-        }
-    }
-}
-
-class ONode<D, V> extends Node<D, V> {
-    private V value;
-
-    public ONode(V value) {
-        this.value = value;
-    }
-
-    @Override
-    public V execute(D data) {
-        return value;
-    }
-}
+```bash
+git clone https://github.com/jinseisieko/binary-decision-tree.git
+cd binary-decision-tree
+mvn install
 ```
+
+Then add the same dependency to your project (without GitHub auth).
+
+## 🚀 Quick Start
+
+```Java
+// some examples
+```
+
+> 💡 Full examples in [`UseCases.java`](src/test/java/io/github/jinseisieko/decisiontree/UseCases.java).
+
+## 📚 Key Features
+
+- Create binary decision trees with custom conditions and outcomes
+- Modify trees using the builder pattern
+- Two implementations: dynamic pointer-based trees and array-based trees
+- Support for copying and branching operations
+
+## 🛠️ Current Status & To-Do List
+
+The project is currently under development. Here are the remaining tasks to complete the implementation:
+
+### Core Implementation
+
+- [ ] **DynamicDecisionTree**: Implement constructor and methods (currently throws `UnsupportedOperationException`)
+- [ ] **DynamicDecisionTree.Builder**: Implement all builder methods
+- [ ] **ArrayDecisionTree**: Implement constructor and methods (currently throws `UnsupportedOperationException`)
+- [ ] **ArrayDecisionTree.Builder**: Implement all builder methods
+
+### Branch Functionality
+
+- [ ] **DynamicDecisionBranch**: Implement methods for subtree operations
+- [ ] **ArrayDecisionBranch**: Implement methods for subtree operations
+
+### Infrastructure
+
+- [ ] **Constructors**: Add proper initialization for all tree implementations
+- [x] **Interface Fix**: Fixed typo in DecisionTreeBuilder interface (`asBranchoOfSubtree` should be `asBranchOfSubtree`)
+- [ ] **Testing**: Write comprehensive tests for all implemented functionality
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to submit a pull request or open an issue to discuss what you would like to change.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
