@@ -270,7 +270,7 @@ public class DynamicDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
                 throw new IllegalArgumentException("Branch must be a DynamicDecisionBranch");
             }
             DynamicDecisionBranch<I, O> dynamicBranch = (DynamicDecisionBranch<I, O>) branch;
-            AbstractDecisionNode<I, O> branchNode = dynamicBranch.getRootNode();
+            AbstractDecisionNode<I, O> branchNode = dynamicBranch.getRootNode().copy();
             if (currentNode == null) {
                 tree.root = branchNode;
                 currentNode = branchNode;
