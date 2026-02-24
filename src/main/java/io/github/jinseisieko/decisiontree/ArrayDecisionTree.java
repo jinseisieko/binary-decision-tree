@@ -48,8 +48,6 @@ public class ArrayDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
     public class Builder implements DecisionTreeBuilder<I, O> {
         private ArrayDecisionTree<I, O> tree;
         private int depth;
-        private Predicate<I>[] nodes;
-        private Function<I, O>[] outcomes;
 
         public Builder(ArrayDecisionTree<I, O> tree) {
             throw new UnsupportedOperationException("Not supported yet.");
