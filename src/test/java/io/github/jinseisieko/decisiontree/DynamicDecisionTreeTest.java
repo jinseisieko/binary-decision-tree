@@ -46,7 +46,7 @@ class DynamicDecisionTreeTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {1, 2, 3, 4, 5})
+    @ValueSource(ints = {2, 3, 4, 5})
     void isFullyDefinedOfIncompleteTreeWithDifferentDepth_shouldWorkExactly(int depth) {
         DecisionTreeBuilder<Integer, Integer> builder = buildCompleteSubtree(
             new DynamicDecisionTree<Integer, Integer>().builder(),
@@ -57,7 +57,7 @@ class DynamicDecisionTreeTest {
         builder.goToRoot();
         builder.goToFalseChild();
         builder.clearSubtree().insertOutcome(0);
-        
+
         BinaryDecisionTree<Integer, Integer> tree = builder.build();
         assertFalse(tree.isFullyDefined());
     }

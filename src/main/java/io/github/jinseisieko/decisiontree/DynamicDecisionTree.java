@@ -401,7 +401,7 @@ public class DynamicDecisionTree<I, O> implements BinaryDecisionTree<I, O> {
 
         private boolean checkAllPathsHaveDepth(AbstractDecisionNode<I, O> node, int currentDepth, int targetDepth) {
             if (node == null) {
-                return currentDepth == targetDepth + 1;
+                return false;
             }
             if (node instanceof OutcomeNode) {
                 return currentDepth == targetDepth;
